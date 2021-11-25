@@ -1,1 +1,0 @@
-c:\test\WebDev.WebServer /port:65531 /path:"c:\test\examweb" /vpath:"/examweb"
