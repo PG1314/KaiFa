@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表</title>
+    <style>
+        div{
+             width: 400px;
+            height: 400px; 
+             /* float:left  */
+        }
+        img{
+            width: 150px;
+            height: 90px;
+            /* float:left; */
+            /*text-align:right;  /* 图片水平对齐  / center 居中 */
+            display: table-cell-block;
+            vertical-align: middle; /* 图片锤直对齐 / bottom 底部 /top 顶 / middle 中间 //效果未出，后续实战*/  
+            float:right;    /* 浮动， 文本与图片环绕 */
+        }
+
+/*1.图片样式
+ a.图片的大小(inline-block)       
+语法:
+width:像素值
+height:像素值
+(img=>inline-block,a=>inline,h1=>block)
+block = 设置大小，独立占用一行
+inline-block=设置大小，不独立占用一行
+inline = 不能设置大小，即使设置也不会显示 */
+
+    </style>
+</head>
+<body>
+    <div><img class="23" src="男孩.png" alt="">
+        <img src="黄鸭.gif" alt="">2343
+        <img src="雪1.gif" alt=""></div>
+</body>
+</html>

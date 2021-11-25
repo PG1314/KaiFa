@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断语句</title>
+</head>
+<body>
+    <script type="text/javascript">
+    var a=1,b=2,c=3;
+    document.write("<h2>if判断语句</h2>");
+    document.write("a:"+a+"\\b:"+b+"\\c:"+c+"<br>");
+    if(a+b<=c){
+        a++;
+        document.write("a:"+a);
+    }
+    
+    if(a+=b,a<=b+c){
+        document.write("<br>"+"a="+a);
+    }
+    else{
+        document.write("<br>b+c:"+b+c);
+    }
+    </script>
+    <script type="text/javascript">
+    var a=1,b=2,c=3;
+    document.write("<h2>switch语句</h2>");
+    while(a==1||a==3||a==6){
+        switch(a==1||a==3){
+            case a==1:
+                document.write("a的值为：");  //问题，Switch中br行标签功能无法使用//已解决，问题第一个cas判断时a=1;
+                document.write(a=a+b);
+                break;
+            case a==3:
+                document.write("a的值为：");
+                document.write(a+=c);
+                break;
+            default:
+                document.write("a的值为："+a);
+                break;
+        }
+        document.write("<br>");
+    }
+    document.write("<h3>do while循环</h3>");
+    a=0;
+        do{
+            document.write("你好世界<br>");
+            a++;
+        }while(a<2);
+    </script>
+    <script type="text/javascript">
+    document.write("<h2>for 循环<h2>");
+        for(a=1,b=1,c=1;a<10;a++){           
+            b=a*b,c+=c+a;
+            document.write("a:"+a+"b:"+b+"c:"+c+"<br>");  //<pre> TAB键
+        }
+    //continue  跳出本次循环
+    
+    
+    </script>
+
+
+
+    
+</body>
+</html>

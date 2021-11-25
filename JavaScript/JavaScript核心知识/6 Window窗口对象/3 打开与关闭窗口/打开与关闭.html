@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打开关闭窗口</title>
+</head>
+<body>
+    <p>
+        top        窗口顶部距离屏幕顶部像素<br>
+        left       窗口左端距离屏幕左端像素<br>
+        width      对话框的宽度<br>
+        height     对话框的高度<br>
+        scrollbars 是否像素滚动条<br>
+        resizable  设定对话框大小是否固定<br>
+        toolbar    浏览器工具条，包括后退及前进按钮等<br>
+        menubar    菜单条，一般包括有文件、编辑及其他条目<br>
+        location   定位区，也叫地址栏，可输入URL的浏览器文本框<br>
+        direction  更新信息按钮<br>
+    </p>
+    
+    <!-- <script type="text/javascript"> //打开窗口
+    //语法  windowVar=window.open(url,windowname[,lcation]); window.Var //当前打开窗口句柄，如果open方法成功，着值为window对象的句柄，反正为空
+    //      location    打开窗口的参数
+    window.open("new.html","new");  //打开一个新窗口
+    window.open("new2.html","new2","width=100,height=100");   //打开一个指定大小
+    window.open("new3.html","new3","scrollbars,resizable");       //打开一个带滚动条的固定窗口
+    window.open("new4.html","new4","width=300,height=300,top=200,left=400");  //打开指定大小和位置的窗口
+    </script> -->
+    <!-- <script type="text/javascript"> //关闭窗口
+    window.close(); //关闭窗口   有三种方法     window.close(); close();  this.close();  
+    </script> -->
+
+    <a href="" onclick="window.open('关闭当前窗口.html','new5','width=500,height=500,top=60,left=500')">生成窗口</a> <!--   //点击生成指定子网页 为实现关闭当前窗口 --> 
+    <form action="" id="forrm1">
+    <input type="submit" value="生成子窗口" name="sudmin1" onclick="newclose(),close1()">
+    </form>
+    <script type="text/javascript">
+    function newclose(){
+        var win = window.open("关闭子窗口.html","new6","width=350,height=350,menubar,direction");
+    }
+    </script>
+</body>
+</html>

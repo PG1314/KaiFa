@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div id="click">123</div>
+    <div id="click1">123</div>
+    <script type="text/javascript">     // innerHTML  innerText
+    document.getElementById("click").innerHTML="2027-<b>12</b>-24";
+    /*  html代码             innerHTML属性           innertext属性
+       <div>12</div>             "12"                   "12"
+       <div><b>12</b></div>   "<b>12</b>"               "12"
+    */
+    </script>
+    <script type="text/javascript">     //outerHTML   outerText
+        document.getElementById("click1").outerHTML="2018-<b>12</b>-24";
+    /*  html代码                    innerHTML属性                        innertext属性
+       <div id='12'>12</div>        <DIV id='12'>12</DIV>                   "12"
+       <div><font color="red"></div>   <DIV><FONT color=red></DIV>           ""
+    */
+    </script>
+</body>
+</html>

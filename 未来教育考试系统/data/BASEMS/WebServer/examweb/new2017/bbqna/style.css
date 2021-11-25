@@ -1,0 +1,16 @@
+
+*{margin:0; padding:0; list-style-type:none;}
+body{font-size:12px; color:#333; background:#fefefe;}
+a{color:#769d06;}
+a:hover{color:#333;}
+a img{border:none;}
+.clear{clear:both;}
+
+#main{width:900px; margin:0 auto;}
+#main table{}
+#main table td{}
+#content{overflow:auto; line-height:30px; padding:20px; font-size:12px;}
+#content table{font-size:12px; line-height:30px;}
+#content table td{padding:5px;}
+#content p{text-indent:24px; line-height:30px;}
+td.qinzi img{width:150px;}

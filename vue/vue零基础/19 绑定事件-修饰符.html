@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo19</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="add"></div>
+    
+</body>
+<script>    //6个Vue中事件修饰符；stop、prevent、capture、self、once、passive
+    const app=Vue.createApp({
+        data(){
+            return{
+                count:0,
+            }
+        },
+        methods:{
+            addCountClick(){
+                this.count++
+            },
+            handleBtnClick1(){  
+                alert(1)
+            },
+//阻止冒泡stop  //阻止冒泡self需加到外层DOM //阻止默然行为的修饰符，prevent 列如阻止form
+//capture 改成捕获模式，默认的模式都是冒泡模式，也就是从下到上，但是你用capture后，是从上到下的
+//once 事件只执行一次   //passive   解决滚动时性能修饰符
+
+        },
+        template:`
+            <div @click.capture="handleBtnClick1">
+                <div>目前已点佳丽数量{{count}}.</div>
+                <button @click.once="addCountClick()">增加一位</button>
+            </div>
+        `
+    })
+    const vm=app.mount("#add");
+</script>
+</html>

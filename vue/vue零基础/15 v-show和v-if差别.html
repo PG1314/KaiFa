@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo15</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app"></div>
+    
+</body>
+    <script>
+        const app=Vue.createApp({       //v-if(跟灵活，有三目运算符，有ifelse、else)
+            data(){                     //v-show(主要作用控制样式，类似于css中display=none)
+                return{                 
+                    show:true,
+                }
+            },
+            template:`
+                <h2 v-show="show">javascript</h2>
+            
+            `
+        })
+        const vm=app.mount("#app")
+
+    </script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo22</title>
+    <script src="http://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script>
+    const app=Vue.createApp({
+        data(){
+            return{
+                checked:false,
+                name:'',
+                message:'',
+                message1:'java'
+            }
+        },
+        
+        template:`
+        <div>{{checked}}<input type="checkbox" v-model="checked" />
+        <div>
+        <div>{{name}}<input type="checkbox" v-model="name" true-value="javascipt" false-value="错误" />
+        </div>
+        <div>{{message}}<input v-model.lazy="message" /></div>
+        <div>{{typeof message}}<input v-model.number="message" /></div>
+        <div>{{message1}}<input v-model.trim="message1" /></div>
+        
+        `//lazy 焦点失去后进行改变数据
+        //input 输入的内容最终变为字符串    最终变为数字使用number
+    })
+    const vm=app.mount("#app")
+
+</script>
+</html>

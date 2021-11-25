@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双DOM元素动画</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+    <style>
+        .v-enter-from{
+            opacity:0;
+        }
+        .v-enter-to{
+            opacity:1;
+        }
+        .v-enter-active{
+            transition:opacity 2s ease-in;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <div>加入mode控制DOM元素显示顺序<br>加入apppear展示时出现动画</div>
+</body>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return{
+                    isShow:true
+                }
+            },
+            methods:{
+                hanldClick(){
+                    this.isShow = !this.isShow
+                }
+            },
+            template:`
+            <transition mode="out-in" appear>
+                <div v-if="isShow">大脚进入试衣间</div>
+                <div v-else>晓红进入试衣间</div>
+            </transition>
+            <button @click="hanldClick">切换场景</button>
+            `
+        })
+        const vm=app.mount("#app")
+    </script>
+</html>

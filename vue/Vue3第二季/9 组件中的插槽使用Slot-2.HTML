@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot-2</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return{
+
+                }
+            },
+            template:`
+            <div> 
+            <h2>欢迎光临浪漫-请选择您的技师</h2>  
+            <hong-lang-man>
+                <template #one>1.男嘉宾，请上二楼。</template>
+                <template v-slot:tow>3.你点了198元泰式按摩</template>
+            </hong-lang-man>  
+            </div>
+            `
+            //v-slot:one   简写为 #one
+        })
+        app.component("JiShi",{
+            template:`
+            <div>
+                你选中了<slot></slot>为你服务
+            </div>
+            `
+        })
+        app.component('HongLangMan',{
+            template:`
+            <div>
+                <slot name="one"></slot>
+                <div>2.你选择了谢大脚为你服务</div>
+                <slot name="tow"></slot>
+            </div>
+            `
+            //                <div>1.男嘉宾，请上二楼。</div>
+            //<div>2.你选择了谢大脚为你服务</div>
+            //    <div>3.你点了198元泰式按摩</div>
+        })
+        const vm=app.mount("#app")
+    </script>
+</html>

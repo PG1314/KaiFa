@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异常处理</title>
+</head>
+<body>
+    <script type=text/javascript>
+    // try{                 //*语法格式
+    //     somestatements;
+    // }catch(exception){
+    //     somestatements;
+    // }finally{
+    //     somestatements;
+    // }
+    //如例：
+
+    var str = "I like JavaScript";
+    try{                                //尝试
+        document.write(str.charat(5));
+    }catch(exception){                  //捕获
+        alert("运行时出现异常");
+    }finally{                           //最后
+        alert("结束运行try--catch--finally语句");
+    }
+    
+    //Error对象     message 实际错误消息/   name 错误类型字符串
+
+    try{
+        document.write(str.charat(5));
+    }catch(exception){
+        alert("实际错误消息为："+exception.message+"\n错误类型字符串为："+exception.name);
+    }
+
+    //throw 抛出异常
+    //throw new error("somestatements");    //语法
+
+    try{
+        var num=1/0;
+        if(num=="Infinity"){
+            throw new Error("除数不可为0");
+        }
+    }catch(exception){
+        alert(exception.message);
+    }
+    </script>
+    
+</body>
+</html>

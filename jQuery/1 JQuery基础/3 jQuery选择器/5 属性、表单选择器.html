@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器</title>
+    <script src="../../JS/jquery-3.6.0.js" type="text/javascript"></script>
+</head>
+<body>
+    <p><h3>属性选择器</h3>
+    [attribute] 匹配包含给定属性的元素  $("div[name]")  //匹配含有name属性的div元素 <br>
+    [attribute=value]   匹配给定属性是某个特定值得元素  $("div[name='text']")   //匹配name属性是text的div元素 <br>
+    [attribute!=value]  匹配所有含指定属性，但不等于特定值的元素    $("div[name='text']")  //匹配name属性不是test的div元素 <br>
+    [attrivute*=value]  匹配给指定属性是包含某些值的元素    $("div[name*='text']")  //匹配name属性中text值的div元素 <br>
+    [attrivute^=value]  匹配给指定的属性是以某些值开始的元素    $("div[name^='text']")  //匹配name属性以text开头的div元素 <br>
+    [attrivute$=value]  匹配给定的属性是以某些值结尾的元素  $("div[name$='test']")  //匹配name属性以test结尾的div元素 <br>
+    [selector1] [selectior2] [selectiorN]   复合属性选择器，需要同时满足多个条件时使用 <br>
+    $("div[id][name^='test']")  //匹配具有id属性并且name属性是以test开头的div元素 <br>
+    <h3>表单选择器</h3>
+    :input  匹配所有的input元素 $(":input") //匹配所有的input元素   $(form :input)   //匹配<form>标记中的所有input元素，注意：在form和:中有一个空格 <br>
+    :button 匹配所有的普通按钮，即type="button" de input元素    $(":button") //匹配所有的普通按钮 <br>
+    :checkbox   匹配所有的复选框    $(":checkbox")  //匹配所有的复选框 <br>
+    :file   匹配所有的文件域    $(":file")  //匹配所有文件域 <br>
+    :hidden 匹配所有的不可见元素，或者type属性为hidden的元素    $(":hidden")    //匹配所有的文件域 <br>
+    :image  匹配所有的图片域    $(":image") //匹配所有的图片域 <br>
+    :password   匹配所有的密码域    $(":password")  //匹配所有的密码域 <br>
+    :radio  匹配所有的安选按钮  $(":radio") //匹配所有的单选按钮 <br>
+    :reset  匹配所有的重置按钮，即type="reset"de input元素  $(":reset") //匹配所有重置按钮 <br>
+    :submit 匹配所有提交按钮，即type="submit"的input元素    $(":submit")    //匹配所有重置按钮 <br>
+    :text   匹配所有单行文本框  $(":text")  //匹配所有的单行文本框   <br>
+    </p>
+    <form>
+        复选框：<input type="checkbox"><br>
+        单选按钮：<input type="radio"><br>
+        图像域：<input type="image"><br>
+        文件域：<input type="file" width="200px"><br>
+        密码域：<input type="password" height="150px"><br>
+        文本框：<input type="text" width="150px"><br>
+        普通按钮：<input type="button" value="普通按钮"><br>
+        重置按钮：<input type="reset" value="重置按钮"><br>
+        提交按钮：<input type="submit" value="提交按钮"><br>
+        <input type="hidden" value="这是隐藏的元素"><br>
+        <div id="testDiv"><span style="color: blue;">隐藏域的值</span></div>
+    </form>
+    <script type="text/javascript"> //利用表单选择器匹配元素
+        $(document).ready(function(){
+            $(":checkbox").attr("checked","checked");   //选中复选框
+            $(":radio").attr("checked","checked");      //选中单选框
+            $(":image").attr("src","../../../JavaScript/img/男孩.png"); //设置图片路径
+            $(":file").hide();   //隐藏文件域
+            $(":password").val("123");   //设置密码域的值
+            $(":text").val("文本框");    //设置文本框的值
+            $(":button").attr("disabled","disabled");    //设置按钮不可用
+            $(":reset").val("设置重置");
+            $(":submit").val("设置提交");   //设置提交按钮的值
+            $("#testDiv").append($("input:hidden:eq(1)").val());   //显示隐藏域的值
+        });
+        </script>
+</body>
+</html>

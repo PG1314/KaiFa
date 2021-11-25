@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠键事件</title>
+    <script type="text/javascript"> //项目失败
+        var RGB =new Array("olive","teal","red","blue","maroon","navy","lime","fuschia","green","purple","gray","yellow","aqua","white","silver");  //定义多个颜色
+        var n = 0;
+       function RGB1(){
+        if(n==(RGB.length-1))
+            n=0;
+            n++;
+            document.bgColor=RGB[n];
+        }
+    </script>
+</head>
+<body>
+    <form name="from1" method="POST" action="">
+        <input type="submit" value="变换颜色" onclick="RGB1()">
+    </form>
+
+    <p id="P1" style="cursor:pointer" onmousedown="an()" onmouseup="sho()">点击按钮随机颜色</p>
+    <script type="text/javascript">
+    function an(){
+        var n=document.getElementById("P1");
+        n.style.color="#0022AA"
+    }
+    function sho(){
+        var b=document.getElementById("P1");
+        b.style.color="#AA9900"
+    }
+
+    
+    </script>
+</script>
+</body>
+</html>

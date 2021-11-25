@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>窗口居中</title>
+</head>
+<body>
+    <!-- <map name="Map">       该方法查看光盘资料 290页
+        <img src="../../../../img/男孩.png" alt="Planets">
+        <area shape="rect" coords=",17,125,39" href="#" onclick="map()" alt="">12
+        <area shape="circle" coords="49,28,14" href="" alt="">
+    </map> -->
+    <input type="button" value="生成居中窗口" onclick="map()">
+    <script type="text/javascript">
+    function map(){
+        var hdc = window.open("new7.html","new7","width=322,height=206");   //打开窗口
+        var width=window.screen.width;
+        var height=window.screen.height;
+        hdc.moveTo((width-322)/2,(height-206)/2);    //移动到屏幕中间
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小黄鸭电影排行榜</title>
+    <style>
+        .bt {
+            width: 50px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        tr {
+            height: 30px;
+            background-color: #c0f;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="1" background-color: #c0f;>
+        <tr height: 30px;>
+            <td width="50">排名</tb>
+            <td width="210">影片</tb>
+            <td width="100">票房</tb>
+        </tr>
+        <script type="text/javascript">
+            var yp = new Array("魔兽", "美人鱼", "西游记孙悟空三打白骨精", "疯狂动物成", "美国队长3");
+            var pf = new Array(14.7, 33.9, 12, 15.3, 12.5)
+            var pf1 = new Array(14.7, 33.9, 12, 15.3, 12.5);
+            pf1.sort();             //从小到大排序
+            pf1.reverse();          //倒叙
+            for (var y = 0; y < pf.length; y++) {
+                for (var x = 0; x < pf.length; x++) {
+                    if (pf[x] == pf1[y]) {
+                        document.write("<tr height=26 bgcolor='#FFFFFF'>");
+                        document.write("<td >" + (y + 1) + "</td>");
+                        document.write("<td >" + yp[x] + "</td>");
+                        document.write("<td >" + pf1[y] + "亿</td>");
+                        document.write("</tr>");
+                    }
+                }
+            }
+        </script>
+    </table>
+</body>
+
+</html>

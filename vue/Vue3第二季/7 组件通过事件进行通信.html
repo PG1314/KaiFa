@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件通信</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return{
+                    counter:0,
+                }
+            },
+            methods:{
+                handleAddCounter(param){
+                    console.log(param)
+                    this.counter=param
+                }
+            },
+            template:`
+                <h2>JSPang.com</h2>
+                <counter :counter="counter" @add="handleAddCounter" />
+            `
+        })
+        app.component("Counter",{
+            props:['counter'],
+            emits:{             // 对传递值进行校验
+                add:(value)=>{
+                    return value <20 ?true:false;
+                }
+            },
+            methods:{
+                handleClick(){
+                    this.$emit('add',this.counter+2)       //警告的意思你调用的add方法，并没有用emits进行声明。//子组件向父件传参
+                }
+            },
+            template:`
+            {{counter}}<button @click="handleClick">增加壹</button>
+            `
+        })
+        const vm=app.mount("#app")
+    </script>
+</html>

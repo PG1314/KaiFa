@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片验证码</title>
+</head>
+<body>
+    
+    <script type="text/javascript">   
+    var str="" , img="";
+    var strsource=['呼','如','一','夜','春','风','来','千','树','万','树','梨','花','开']
+    for(var i=0;i<4;i++){
+        var n = Math.floor(Math.random()*strsource.length);
+        str=str+strsource[n];
+        img=img+"<img src='Images/checkcode/"+n+".gif' width='19' height='20'>"
+        div1.innerHTML=img;
+    }
+    </script>
+</body>
+</html>

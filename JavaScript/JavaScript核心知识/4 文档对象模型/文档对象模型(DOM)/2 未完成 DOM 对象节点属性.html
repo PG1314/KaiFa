@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点属性</title>
+</head>
+<body>
+    <p>节点属性： 复制节点</p>
+    <form action="">
+        <hr>
+        <select name="shapN" id="shopI">
+            <option value="X">请选择类型</option>
+            <option value="0">数码电子</option>
+            <option value="1">家用电器</option>
+            <option value="2">床上用品</option>
+        </select>
+        <hr>
+        <div id="di">
+            <p id="jd1">节点1</p>
+            <input type="text" id="bj" size="6" value=""><br>
+            <input type="text" id="txt" size="6" value="">
+
+        </div>            <!-- <p>节点2</p>
+            <p>节点3</p> -->
+        <input type="button" value="复制" onclick="addrow(false)"/>
+        <input type="button" value="复制到叶" onclick="addrow(true)"/>
+        <input type="button" value="删除节点" onclick="delnode()"/>
+        <input type="button" name="" id="" value="替换" onclick="th(bj.value,txt.value)"/>
+    </form>
+    <script type="text/javascript">     //obj.cloneNode(deep)   复制节点
+        function addrow(bl){
+            var sel=document.getElementById("shopI");   //变量.cloneNode(真或假)
+            var newselect = sel.cloneNode(bl);
+            var b=document.createElement("br");
+            di.appendChild(newselect);          //添加节点
+            di.appendChild(b);
+        }
+    </script>
+    <script type="text/javascript">     //obj.removeChild(oldChid)  删除节点
+            function delnode(){
+                var shana = document.getElementById("di");      //获取页面id元素
+                if(shana.hasChildNodes()==false)                //判断是否有子节点
+                alert("该节点无子节点");
+                if(shana.hasChildNodes()){
+                    //alert("该节点有子节点"),
+                    //document.write(shan.hasChildNodes());
+                    shana.removeChild(shana.lastChild);        //删除子节点
+                }
+            }
+    </script>
+    <script type="text/javascript">         // obj.replaceChild(new,old)
+        function th(str,bj){
+                var dv = document.getElementById("jd1");
+                if(dv){
+                    var wb = document.createElement(bj);
+                    wb.id='jd1';
+                    var newtext = docuemtn.createElement(str);
+                    wb.appendChild(wb);
+                    dv.parentNode.replaceChild(newtext,dv);     //替换节点
+                }
+        }
+    </script>
+
+        <script type="text/javascript">         //目前无法完成，替换节点出现无效字符集
+        function repN(str,bj){
+            var rep = document.getElementById("btt");
+            if(rep){
+                var newNode = document.createElement(bj);       //错误行
+                rep.id='btt';
+                var newtext = document.createTextNode(str);
+                newNode.appendChild(newtext);
+                rep.parentNode.replaceChild(newNode,rep);
+            }
+        }
+        </script>
+            <b id="btt">要替换的文本 </b>
+            <p>
+            输入标记：<input type="text" id="bb" size="6"><br>
+            输入文本：<input type="text" id="tt" size="6"><br>
+            <input type="button" value="替换" onclick="repN(tt.value,bb.value)">
+</body>
+</html>

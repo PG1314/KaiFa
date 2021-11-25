@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" context="P-G">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+    <style>
+        *{
+            margin:0px;
+        }
+        a:link{color:rgb(0, 68, 255)}
+        a{
+            text-decoration:none;
+        }
+        .float{
+            text-align:right;
+        }
+        .DIV{
+            margin: 4em 2em 1.5em 2em;
+        }
+        .DIV2{
+            margin: 1em 2em 0px 2em;
+        }
+        .logo{
+            width: 48px;
+            height: 48px;
+
+        }
+        .logo2{
+            width: 20px;
+            height: 20px;
+            align-items: flex-end;  
+            margin-right: 6px;
+        }
+        
+        .zhang{
+            height:20px;
+            width: 88%;
+            clear:left;
+            display: inline-block;
+        }
+        .zhang:before{      
+            content:"|";
+            color:rgb(139, 63, 63);
+        }
+        .hy{
+            font-size:large;
+        }
+        .YanZhenMa{
+            background-color: rgb(190, 190, 190);
+            border-bottom: #5090ff;
+        }
+        #SubMin{
+            width: 100%;
+            height: 2.5em;
+            color:#ffffff;
+            background-color: #5090ff;
+            border-radius: 4%;
+            border-bottom: 0px;
+            /* border-width: 0px; */
+
+        }
+        #GoXuan{
+            float: left;
+            /* display: inline-block;  变成块标签 */    
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+    <script>
+        const app=Vue.createApp({  
+            data(){
+                return{
+                    isShow:true,
+                    counter:1,
+                    account:'1',
+                    password:'',
+                }
+            },
+            methods:{
+
+            },
+            template:`
+            <div>
+            <DaJiao />
+            <ShuRu :counter="this.counter"/>    
+            <DengLu/>
+            <XieYe />
+            <foot />
+            
+            `
+        })
+        app.component('DaJiao',{    //头部样式排布
+            template:`
+            <div class="DIV"><img class="logo" src="images/黄鸭.gif" alt="">
+            <div><b class="hy">欢迎使用小黄鸭</b><div></div> 
+            `
+        })      
+        app.component('ShuRu',{     //输入框数据获取
+            props:['this.counter'],
+            template:`
+                <div class="DIV2">{{counter}}
+                    <div>
+                    <div style="float"><img class="logo2" src='images/手机.jpg'><input  class="zhang" type="text" required="" placeholder="请输入手机号" autocapitalize="none" autocomplete="off" v-model="this.counter" ></input></div>
+                    <div style="float"><img class="logo2" src='images/密码.jpg'><input class="zhang" type="password" required="" placeholder="请输入密码" autocapitalize="none" autocomplete="off" ></input></div>
+                    </div>
+                <div>
+            `
+        })
+        app.component("DengLu",{    //javascript 登录请求判断
+            template:`
+            <div class="DIV2">
+                <div  style="text-align:center;"><button id="SubMin" tyle="submin">登录</button></div>
+            </div>
+            `
+        })
+        app.component("XieYe",{
+            methods:{       // 需获取复选框值并判断输入框激活登录按钮
+                button1(){
+                    alert("你点击了");
+                }
+            },
+            template:`
+            <div class="DIV2">
+                <from action="#">
+                    <input id="GoXuan" type="checkbox">
+                <from>
+                <p>我已阅读同意<a href="">服务协议</a>&<a href="">隐私政策</a></p></div>
+            `
+        })
+        app.component("foot",{  // 忘记密码和登录注册链接
+            template:`
+            <div class="DIV2">
+                <div><a style="float:left;color: rgb(190, 190, 190);" href="#">忘记密码</a></div>
+                <div style="text-align:right;"><button class="YanZhenMa" type="button"><a href="#">验证码登录/注册</a></button></div>
+            <div>
+            `
+        })
+        const vm=app.mount("#app")
+    </script>
+</html>
+

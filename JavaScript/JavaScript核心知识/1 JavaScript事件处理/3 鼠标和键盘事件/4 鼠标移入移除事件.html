@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移动</title>
+    <style>
+        table{
+            text-align: center;
+        }
+        td{
+            height: 21px;
+            width: 70px;
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+     <script type="text/javascript">    //鼠标移入移除事件
+    function btm(cursor,i){
+        i==1?cursor.style.opacity=1:cursor.style.opacity=0  //三目判断 进行透明度设置
+    }       
+    </script>
+    <img src="../img/黄鸭.gif" alt="" onmouseover="btm(this,1)" onmouseout="btm(this,0)"> <!--//onmouseover 鼠标移到 //onmouseout 鼠标移出 -->
+
+    <!-- <table>    //未完成案例
+        <tr>
+            <td id="t">首页</td>
+            <td id="g" onmouseover="bt(this,1)" onmouseout="bt(this,0)">购物中心</td>
+            <td id="t">个人收藏</td>
+            <td id="t">我的中心</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>显卡</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>JavaScript</td>
+        </tr>
+        <script type="text/javascript">
+            var a=document.getElementById(t);
+            function bt(cursor,x){
+                if(x==1){
+}
+                else{
+                    cursor.style.opacity=0
+                }
+            }
+            </script>
+    </table> -->
+</body>
+</html>

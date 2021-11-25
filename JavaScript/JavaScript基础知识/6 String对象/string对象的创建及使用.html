@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>string使用及创建</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var arr = new Array(1, 2, 4, 3, 5, 6);
+        var str = new String("你好,hell");
+        // document.write("输出string的字符串长度："+str.length);  //length
+        // document.write("<br>判断当前对象数据类型"+str.constructor); //constructor
+        String.prototype.fu = function (name) {
+            document.write("你好，" + name);
+        }
+        var PG = new String("PGM");
+        PG.fu(PG);
+        fu1 = function (name) {
+            document.write("<br>你好，" + name);
+        }
+    </script>
+    <form action="">
+        <input type="button" value="提交" onclick="fu1(PG)">
+    </form>
+</body>
+
+</html>

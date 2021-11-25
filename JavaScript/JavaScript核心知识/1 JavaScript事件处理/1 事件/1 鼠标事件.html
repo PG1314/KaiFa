@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件使用</title>
+</head>
+<body>
+    <form action="" id="form">
+        <!-- HTML中 调用事件   -->
+        <input type="submit" value="hm提交" onclick="alert('您生成了提交事件');">
+        <input type="submit" value="js提交" id="js">
+    </form>
+    <script type="text/javascript">     //调用事件
+        //鼠标键盘事件 //表单事件 //页面相关事件
+        //1. HTML 中调用事件
+        //2. javascript中调用事件
+        //var js1=document.getElementsByTagName("js");  //网页定位进行实例化，效果差
+        form.js.onclick = function () {
+            alert("您运用了JS进行提交");
+        }
+    </script>
+    <script type="text/javascript">    //事件对象
+        function sj1(event){
+            //处理兼容性，获取事件对象
+            if(window.event){
+                event=window.event;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

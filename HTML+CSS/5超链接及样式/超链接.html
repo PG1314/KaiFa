@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超链接</title>
+    <style>
+        /* 使用顺序不能换，遵循（love hate 爱恨原则） */
+        a:link{color:rgb(0, 255, 21);};     /* 未访问 */
+        a:visited{color:rgb(240, 123, 123)}     /* 访问过 */
+        a:hover{color:#666}                     /* 鼠标经过 */
+        a:active{color:aqua}                    /* 鼠标点击时 */
+        #sho{cursor:pointer;}                     /* 鼠标型状  手型 */
+        #den{cursor: wait;}                       /* 等待 */
+        #bang{cursor: help;}                      /* 帮助 */
+    </style>
+</head>
+<body>
+    <a href="234">超链接</a>
+    <a href="www.baidu.com">超链接</a>
+    <a href="www.baidu.com">超链接</a>
+    <a href="">超链接</a>
+    
+    <div id="sho">手型</div>
+    <div id="den">等待</div>
+    <div id="bang">帮助</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+#kj{
+    border-style:solid;
+    border-width:2px;   
+    width:800px;
+    height:500px;
+    border-color:aliceblue;
+    background-color:aliceblue;
+    vertical-align: middle;
+    float:left;
+}
+#zuo{
+    border-style:solid;
+    border-width:1px ;
+    width:800px;
+    height:400px;
+    float:left;
+}
+#zc{
+    border-style:solid;
+    border-width:0px 0px 3px 0px ;   
+    width:500px;
+    height:100px;
+    border-color:rgb(175, 175, 175);
+    background-color:aliceblue;
+    vertical-align: middle;
+    float:left;
+}
+#table{
+    margin-top:25px; 
+}
+tr{
+    padding:0px 0px;
+    width: 80px;
+}
+p,a{
+    text-align:center;
+    line-height:250%;
+    font-family:"正楷";
+    float:left;
+}
+a{
+    border-style:none;
+    color:rgb(67, 110, 190);
+    text-decoration: none;
+    /* display:block ;
+    border: top 200px;  */
+}
+#zc3{
+    background-color: rgb(255, 0, 0);
+    font-size:16px;
+    width:100px;
+    height:40px;
+    color:aliceblue;
+    margin-top: 5px;
+}
+#zc1{
+    border: top 200px;
+    font-size:23px;
+    width:380px;
+    height:70px;
+    border: 0px;
+    margin-bottom:0px;
+}
+#zc2{
+    width: 40px;
+    height:10px;
+    border-width:1px; 
+    border: top 0px;
+    margin-top: 0px;
+}
+
+#tp>img{
+    float:left;
+    border-style:solid;
+    border-width:10px;   
+    width:500px;
+    height:400px;
+    border:1px;
+    margin-top:0px;
+}
+
+/* input{ 
+    value:"邮箱/会员账号/手机号";
+    placeholder:"邮箱/会员账号/手机号";
+} */
+.inp{
+    width:254px;
+    height:25px;
+}
+#dl1{
+    border-style:groove;
+    border-width:1px;
+    background-color: aqua;
+    height:25px;
+    width:50px;
+    text-align:center;
+}
+
+#zs{
+    font-size:12px;
+    color:rgb(187, 187, 187);
+    padding:0px 0px;   
+}
+
+
+#dl{
+    float:left;
+    border-style:solid;
+    /* border-width:1px ;  */
+    border-width:0px 0px 0px 3px ; 
+    border-color:rgb(175, 175, 175);
+    width:297px;
+    height:500px;
+    margin-top:-100px;
+}
+#dl4{
+    width:254px;
+    height:40px;
+
+}
+img{
+    float:left;
+    width:40px;
+    height:40px;   
+}
+#wj{
+    width: 75.2px;
+    text-align: right;
+}

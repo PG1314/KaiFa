@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量作用域</title>
+    <script type="text/javascript">
+    function one(x){
+        document.write(x+"<br>");
+        var x="V.V"
+        document.write("今天是值得奋斗的日子，加油"+x);
+    }
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+    var x="0.0"
+    document.write("<br>这是全局变量："+x+"<br>这是局部变量"+one(x));
+    eval("x;document.write(x)");
+    //encodeURI(‘URI’ww.baidu.com/ind.html?name=测试) 函数  可对URI进行编码
+    //decodeURI(‘URI’ww.baidu.com/ind.html?name=测试) 函数  可对URI进行解密
+    </script>
+    
+</body>
+</html>

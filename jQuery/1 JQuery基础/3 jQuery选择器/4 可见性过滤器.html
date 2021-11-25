@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过滤器</title>
+    <script src="../../JS/jquery-3.6.0.js" type="text/javascript"></script>
+</head>
+<body>
+    <p><h3>可见性过滤器</h3>
+        可见性：    :visible        <br>
+        不可见：    :hidden         <br>
+        <h3>表单对象的属性过滤器</h3>
+        :cbecked    匹配所有被选中元素  $("input:checked")  //匹配checked属性为checked的input元素   <br>
+        :disabled   匹配所有不可用元素  $("input:disabled") //匹配disabled属性为disabled的input元素 <br>
+        :enabled    匹配所有可用的元素  $("input:enabled")  //匹配enabled属性为enabled的input元素   <br>
+        :selected   匹配所有选中的option元素    $("select option:selected") //匹配select元素中被选中的option元素    <br>
+        <h3>子元素选择器</h3>
+        :first-child    匹配所有给定元素的第一个子元素  $("ul li:first-child")  //匹配ul元素中的第一个元素li    <br>
+        :last-child     匹配所有给定元素的最后一个元素  $("ul li:last-child")   //匹配ul元素中的最后一个子元素li    <br>
+        :only-child     匹配元素唯一的子元素           $("ul li:only-child")   //匹配只含有一个li元素的ul元素中的li <br>
+        :nth-child(index/even/odd/equation) 匹配其父元素下的N个或奇偶元素，index从1开始，而不是从0开始      <br>
+        $("ul li:nth-child(even)")  //匹配ul中索引值为偶数的li元素  <br>
+        $("ul li:nth-child(3)")     //匹配ul中第3个li元素   <br>
+    </p>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var visible = $("input:visible").val();
+            var hiddenval1 = $("input:hidden:eq(0)").val();
+            var hiddenval2 = $("input:hidden:eq(1)").val();
+            //alert(visible+"\n"+hiddenval1+"\n"+hiddenval2);
+        });
+    </script>
+    <input type="text" value="显示的input元素"><br>
+    <input type="text" value="不显示的input元素" style="display:none"><br>
+    <input type="hidden" value="我是隐形域"><br>
+    <script>    //利用表单对象的属性过滤器匹配元素
+
+
+    </script>
+    <form action="">
+        复选框1：<input type="checkbox" checked="checked" value="复选框1"><br>
+        复选框2：<input type="checkbox" checked="checked" value="复选框2"><br>
+        复选框3：<input type="checkbox" value="复选框3"><br>
+        不可用按钮：<input type="button" value="不可用按钮" disabled><br></form>
+        <select onchange="selectval()">
+            <option value="菜单栏1">菜单栏1</option>
+            <option value="菜单栏2">菜单栏2</option>
+            <option value="菜单栏3">菜单栏3</option>
+        </select>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("input:checked").css("display","none");   //隐藏选中的复选框
+            $("input:disabled").val("我是不可用的");    //为灰色不可用按钮赋值
+        });
+        function selectval(){                       //下拉菜单变化时执行的函数
+            alert($("select option:selected").val());     //显示选中的值
+        }
+        </script>
+</body>
+</html>

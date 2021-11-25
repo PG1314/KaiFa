@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线选座</title>
+</head>
+<body>
+    <h3 align='center'>万达影院1号厅</h3>
+    <script type="text/javascript">
+        document.write("<table align='center'>");            
+        for(var x=1,y=1;x<5;x++){ 
+            document.write("<td height=70>");  
+                for(y=1;y<10;y++){
+                    if(x==1&&y==6||x==3&&y==9){
+                    document.write("<td align='center' width='80' background=\\Users\\Administrator\\Desktop\\文件\\JavaScript\\img\\女孩.png >已售</td>");
+                    continue;
+                }
+                document.write("<td align='center' width='80' background=C:\\Users\\Administrator\\Desktop\\文件\\JavaScript\\img\\男孩.png>"+x+"排"+y+"座</td>");
+                document.write("<pre>");
+                }
+            document.write("<td align='center' width='80' background=\\Users\\Administrator\\Desktop\\文件\\JavaScript\\img\\男孩.png>"+x+"排"+y+"座</td>");
+            document.write("</tr>")
+        }
+        document.write("</table>");
+    </script>   
+</body>
+</html>

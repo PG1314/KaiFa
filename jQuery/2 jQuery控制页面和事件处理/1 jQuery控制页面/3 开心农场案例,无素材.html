@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的开心农场</title>
+    <script src="../../JS/jquery-3.6.0.js" type="text/javascript"></script>
+    <style type="text/css">
+    #bg{    /* 控制页面背景 */
+        width: 456px;
+        height: 266px;
+        background-image: url(../../../JavaScript/img/女孩.png);
+        border: #999 1px solid;
+        padding: 5px;
+    }
+    img{    /*  控制图片    */
+        position:absolute;
+        top: 85px;
+        left: 195px;
+    }
+    #seed{  /*  控制播种按钮    */
+        background-image: url(../../../JavaScript/img/雪1.gif);
+        width: 56px;
+        height: 56px;
+        position:absolute;
+        top: 229px;
+        left: 49px;
+        cursor: pointer;
+    }
+    #grow{  /*  控制生长按钮    */
+        background-image: url(../../../JavaScript/img/黄鸭.gif);
+        width: 56px;
+        height: 56px;
+        position: absolute;
+        top: 229px;
+        left: 154px;
+        cursor:pointer
+    }
+    #bloom{ /*  控制开花按钮    */
+        background-image:url(../../../JavaScript/img/雪1.gif);
+        width: 56px;
+        height: 56px;
+        position: absolute;
+        top: 229px;
+        left: 154px;
+        cursor: pointer;
+    }
+    #fruit{ /*  控制结果按钮    */
+        background-image: url(../../../JavaScript/img/男孩.png);
+        width: 56px;
+        height: 56px;
+        position: absolute;
+        top: 229px;
+        left: 154px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div id="bg">
+        <span id="seed"></span>
+        <span id="grow"></span>
+        <span id="bloom"></span>
+        <span id="fruit"></span>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#seed").bind("click",function(){ //绑定“播种’事件
+            $("img").remove();  //移除img元素
+            $("#bg").prepend("<img src='../../../JavaScript/img/女孩.png'>");
+        });
+        $("#grow").bind("click",function(){
+            $("img").remove();
+            $("#bg").append("<img src='../../../JavaScript/img/雪1.gif'>");
+        });
+        $("#bloom").bind("click",function(){
+            $("img").replaceWith("<img src='../../../JavaScript/img/雪1.gif'>");
+        });
+        $("#fruit").bind(function(){
+            $("<img src='../../../JavaScript/img/男孩.png'>").replaceAll("img");
+
+        });
+
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>内置对象</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // math 对象属性 PI(圆周率) LOG2E(以2为底的e的对数)
+        // math 对象方法 abs(x) 返回x的绝对值 math.abs(-10) 返回值为10 andom() 返回0和1之间随机数 max(n1,n2...) 返回最大数
+        // Date 对象是对数据类型进行求值，主要处理日期与时间关系信息
+        // Date 对象的属性有constructor(判断对象的类型是否是日期对象),prototype(自定义属性或方法名)
+        //var sj = new Date();
+        var nyr = new Date();
+        nyr.getFullYear();  //年
+        nyr.getMonth();     //月
+        nyr.getDate();      //日
+        nyr.getHours();     //时
+        nyr.getMinutes();   //分
+        nyr.getSeconds();   //秒
+        nyr.toDateString(); //当前时间
+        //document.write(sj+"<br>");
+        // document.write(sj.constructor == Date);
+        // document.write(Date.prototype.sj3 = sj.getFullYear());
+        // alert(sj);
+        // document.write("<br>");
+        //生成年月日，时分秒
+        function sj(){
+        document.write("年 "+nyr.getFullYear());
+        document.write("&nbsp月 "+nyr.getMonth());// 月份需加1
+        document.write("&nbsp日 "+nyr.getDate());
+        document.write("&nbsp时 "+nyr.getHours());
+        document.write("&nbsp分 "+nyr.getMinutes());
+        document.write("&nbsp秒 "+nyr.getSeconds());
+    }
+    sj()
+    //setInterval("sj()",100); 循环调用
+    </script>
+
+</body>
+
+</html>

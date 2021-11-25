@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        图片随机显示：   Math对象的random(),floor() <br>
+        <div><img src="" alt="wr" id="imgs"></div>
+    </p>
+    <!-- <script type="text/javascript"> //随机
+    //定义图片数量
+    var test = new Array('../../../img/男孩.png','../../../img/女孩.png','../../../img/雪1.gif','../../../img/黄鸭.gif');
+    var n=Math.floor(Math.random()*test.length);   //获取随机数作为数组下标
+    var img=document.getElementById("imgs");    //获取图像对象
+    img.src=test[n];
+    </script> -->
+    <script type="text/javascript">
+    function add(){
+    var src1 = "";
+    var i = Math.floor(Math.random()*4);        //获取0-5之间的数
+    switch(i){
+        case 0:
+            src1="../../../img/男孩.png"; break;
+        case 1:
+            src1="../../../img/女孩.png"; break;
+        case 2:
+            src1="../../../img/雪1.gif"; break;
+        case 3:
+            src1="../../../img/黄鸭.gif"; break;
+    }
+    var src2=document.getElementById("imgs");
+    src2.src=src1;
+   //document.body.background=src1;     //背景颜色赋值
+   setTimeout("add()",3000);
+}
+    add();
+    </script>
+</body>
+</html>

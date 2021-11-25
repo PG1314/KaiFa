@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>窗口</title>
+</head>
+<body>
+    <p>语法：scroll(x,y)    有三种方法实现窗口滚动 绝对位置window.scroll(x,y) window.scrollTo(x,y) 相对位置window.scrollBy(x,y);
+       语法：window.resizeBy(x,y) 设置窗口大小<br>
+        2  <br>
+        1 <br>
+        2  <br>
+        1 <br>
+        2  <br>
+        1 <br>
+        2  <br>
+        1 <br>
+        2  <br>
+        1 <br>
+        2  <br>
+        1 <br>
+        2  <br>
+        1 <br>
+        2  <br>
+        1 <br>
+        2  <br>
+        1 <br>
+        2  <br>
+        1 <br>
+        2  <br>
+        1 <br>
+        2  <br>
+        1 <br>
+        2  <br>
+        1 <br>
+        2  <br>
+        <a href="javascript:openwin()">打开一个自动改变大小的窗口</a>
+    </p>
+    <img src="../../../img/黄鸭.gif" alt="" style="width: 300px;height: 250px;">    
+    <script type="text/javascript">     //窗口滚动
+    var positon = 0;
+    function scroller(){
+        positon++;              //设置纵坐标加一
+        scrollTo(0,positon);    //窗口滚动
+        clearTimeout(timer);    //中止超时
+        var timer = setTimeout("scroller()",20);    //设置超时时间
+    }
+    scroller();     //调用函数
+    </script>
+    <script type="text/javascript">
+    var winheight,winsize,x;
+    function openwin(){         //创建窗口并设置大小和位置
+        winheight=150;
+        winsize=100;
+        x=5;
+        win2=window.open("new8.html",'','scrollbars=on');  //打卡窗口并无滚动条
+        win2.moveTo(0,0);            //设置窗口位置
+        win2.resizeTo(100,100);      //设置窗口大小
+        resize();        
+        // for(var n=1;n<100;n+1){
+        // }           
+    }
+    function resize(){
+        if(winheight>=window.screen.availHeight-3)
+        x=0;
+        win2.window.resizeBy(5,x+=1);         //有问题
+        winheight+=5;
+        winsize+=5;
+        if(winsize>=screen.width-5){
+        winheight=100;
+        winsize=100;
+        return;
+    }setTimeout("resize()",5000);
+    }
+    </script>
+</body>
+</html>

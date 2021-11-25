@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE note [          <!--  DTD 来验证 XML -->
+  <!ELEMENT note (to,from,heading,body)>
+  <!ELEMENT to      (#PCDATA)>
+  <!ELEMENT from    (#PCDATA)>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT body    (#PCDATA)>
+]>
+<note>
+    <to>p</to>
+    <from>g</from>
+    <heading>pg</heading>
+    <body>
+    XML 被设计用来传输和存储数据。
+    HTML 被设计用来显示数据。
+    这是一个基础的语句
+
+
+    
+    </body>
+</note>

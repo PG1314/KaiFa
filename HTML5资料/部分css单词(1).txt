@@ -1,0 +1,120 @@
+Css(cascading??style sheet)（级联样式表）
+
+a:active 单击鼠标左键
+
+italic（倾斜）
+
+word-spacing单词和单词之间的距离
+
+underline下划线
+
+Font-size文字的大小
+
+Background-color:背景颜色
+
+Background-attachment :背景附件
+
+attachment附件，附属物
+
+Border-top-style:上边框的线型
+
+Border-top-color:上边框的颜色
+
+clear清除浮动，明白的; 清晰的
+
+overflow溢出
+
+normal正常
+
+id标识符
+Font-family字体
+
+letter-spacing 字母和字母之间的距离
+
+Line-through (删除线)
+
+text-indent:首行缩进
+
+Background-image：背景图片
+
+scroll滚动
+
+List-style-type:列表样式
+
+solid实线 实心的
+
+border-collapse:collapse; 合并表格的边框
+
+float浮动 （使）漂浮; 自由浮动
+
+static静态 静止的
+
+Import 输入; 进口
+
+Class 类
+
+Font-style:文字是否倾斜
+
+overline(上划线)
+
+line-height:行高
+
+Background-repeat:背景图片是否平铺
+
+Repeat 重复; 复述
+
+List列表
+
+dashed虚线
+
+collapse折叠
+
+display显示
+
+fixed固定 不变的
+
+Link 链接
+
+A:Visited 访问过的
+
+Font-weight:文字加粗方式
+
+none(无)
+
+text-align:文本的水平对齐方法
+
+Background背景; 底色
+
+Background-position:背景图片的定位
+
+position位置，方位;
+
+padding填充
+
+inline内联
+
+absolute绝对的
+
+stylesheet样式表
+
+A:hover 鼠标移上链接上
+
+repeat-x横向平铺
+
+Text-decoration:文本修饰线
+
+bold加粗
+
+repeat-y纵向平铺
+
+no-repeat不平铺
+
+Border-top-width:上边框的宽度
+
+dotted点状线
+
+margin外边距 边缘，范围
+
+block块
+
+relative相对

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>访问语句</title>
+</head>
+<body>
+    <script type="text/javascript">
+    var xx={
+        name:"李四",
+        sex:"女",
+        age:17,
+        interest:"兵乒球，篮球"
+    }
+    for(var dy in xx){          //for...in 语句
+        document.write("变量值："+dy+"="+xx[dy]+"<br>");
+    }
+    function grxx(name,sex,age){
+        this.name=name
+        this.sex=sex
+        this.age=age
+    }
+    var gr = new grxx("海绵宝宝","无",2000)
+    with(gr){
+        document.write("姓名："+name+"<br>性别: "+sex+"<br>年龄: "+age);
+    }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟&组合</title>
+    <style>
+        .类{  /* class选择器 */
+            font-size: 20px;
+            color: slateblue;
+        }
+         .类+div{ /* 兄弟选择器，只能用于同级不断格 */
+            font-size: 15px;
+            color: skyblue;
+        }
+        p,#ID,li{  /* 组合选择器，个选择器需用,好进行分隔 */
+            font-size: 18px;
+            color: rgb(152, 52,152);
+        }
+
+    </style>
+</head>
+<body>
+    <P>你</P>
+    <P class="类">好</P>
+    <div >世</div>
+    <div id="ID">界</div>
+    <ul>
+        <li>hall</li>
+        <li>world</li>
+    </ul>
+</body>
+</html>

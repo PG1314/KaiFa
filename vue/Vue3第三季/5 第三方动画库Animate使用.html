@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate动画使用</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    </head>
+    <style>
+        @keyframes comein{
+            0%{
+                transform :translateX(-120px)
+            }
+            100%{
+                transform :translateX(0px)
+            }
+        }
+        @keyframes comout{
+            0%{
+                transform:translateX(0px)
+            }
+            100%{
+                transform: translateX(-120px);
+            }
+        }
+        .jspang-enter-active{
+            animation: comein 1s;
+        }
+        .jspang-leave-active{
+            animation: comein 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script>
+    const app=Vue.createApp({
+        data(){
+            return{
+                isShow:true
+            }
+        },
+        methods:{
+            hanldClick(){
+                this.isShow = ! this.isShow
+            }
+        },
+        template:`
+
+        <transition 
+        enter-active-class="animate__animated animate__bounce"
+        leave-active-class="animate__animated animate__bounce"
+        >
+        <div v-if="isShow">技术讲程序</div>
+        </transition>
+        <div><button @click="hanldClick">切换动画</button></div>
+        `
+        // <transition name="jspang">
+        // <div v-if="isShow">技术讲程序</div>
+        // </transition>
+    })
+    const vm=app.mount("#app")
+</script>
+</html>

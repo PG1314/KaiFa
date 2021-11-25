@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计数器</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script>
+    Vue.createApp({
+        data(){     
+            return{
+                counter:10
+            }
+        },
+        mounted() {         
+            console.log('页面页面加载完成后-自动执行')  //控制台输出log信息
+            setInterval(() => {    //设置定时器并从10到0
+                this.counter-=1    //this.counter指向date中的counter
+                //this.$data.counter -=1    //效果相同
+                if(this.counter==-1){   //判断全局变量counter是否为-1
+                    this.counter=10
+                }
+            }, 1000);
+        },
+        template:'<div>{{counter}}</div>'   //定义模版
+    }).mount("#app")    //将数据挂载到ID为app中
+</script>
+</html>

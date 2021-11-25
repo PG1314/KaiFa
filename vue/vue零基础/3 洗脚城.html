@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洗脚城</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                content:'花果山洗脚城欢迎您',
+                setMeat:'真空套餐 帝王套餐 夏日套餐 学生套餐',
+                isShowMeal:false
+            }
+        },
+        methods:{           //方法声明
+            huanyingclick(){
+                alert('1元');
+                this.content = "欢迎你的光临，贵宾一位！"
+            },
+            likaclick(){
+                alert('-1元');
+                this.setMeat
+            },
+            orclick(){
+                if(this.isShowMeal==true){
+                    this.content='花果山洗脚城欢迎您'
+                   }
+                   if(this.isShowMeal==false){
+                    this.content='vip用户欢迎惠顾'
+                   }
+                this.isShowMeal=!this.isShowMeal               
+            }          
+        },
+        template:`
+        <div>{{content}}</div>
+        <button v-on:click="huanyingclick">欢迎光临</button>&nbsp
+        <button v-on:click="likaclick">下次光临</button>
+        <div>
+            <div v-if="isShowMeal">{{setMeat}}</div>
+            <button v-on:click="orclick">显示/隐藏</button>
+        </div>
+        `
+    }).mount("#app")
+</script>
+</html>

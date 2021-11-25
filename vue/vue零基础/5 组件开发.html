@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app"></div>
+    
+</body>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    inputvalue:'',
+                    list:[]
+                }
+            },
+            methods:{
+                han(){
+                    this.list.push(this.inputvalue)
+                    this.inputvalue=''
+                }
+            },
+            template:`
+            <div>
+                <my-title/>
+                <input v-model="inputvalue"/>
+                <button v-on:click="han">增加佳丽</button>
+                <ul>
+                    <my-jiali
+                        v-for="(item,index) of list"
+                        v-bind:item="item"
+                        v-bind:index="index"
+                    />
+                <ul>
+            </div>`
+        })
+        app.component('my-title',{
+            template:'<h1 style="text-align:center">象牙山洗脚城</h1>'
+        })
+    app.component('my-jiali', {
+        props: ['item', 'index'],
+        template: ` <li >[{{index}}]-{{item}}</li>`
+    })
+    app.mount("#app")
+    </script>
+</html>

@@ -1,0 +1,63 @@
+目标：
+1、了解什么是css
+2、如何引入css样式（重点和难点）
+3、复习html标签
+
+
+一、复习html标签
+1、HTML结构标签的书写
+	<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+
+2、超链接标签的属性和图片标签的属性
+	<a href="" target="_self/_blank/_top/_parent" title="" class="" id="" name=""></a>
+	<img src="" alt="" width="" height="">
+
+3、列举学过的文本标签
+	h1~h6  p u b strong i em prer...
+
+4、表单中的标签和元素
+	<form action="" method="" ></form>
+	表单元素：
+	<input type="text/password/submit/buttom/reset/radio/checkbox/color/week/date/range/hidden/e-mail...">
+
+	select option
+
+
+二、了解什么是css
+	级联样式表/层叠样式表（cascading style sheets）
+	是一种控制网页显示的技术
+
+三、网页前端开发的三层结构
+	html:结构层
+	css:样式层（表现层、装修层）
+	java script:（js）行为层/思想层
+
+四、css语法
+	a、格式
+	选择器{属性1：属性1;属性2：属性2;....}
+	b、注意事项
+	1、大括号不能少
+	2、属性和属性值是成对出现的
+	3、属性和属性值之间必须要有一个"："
+	4、每个属性结束后以分号结尾
+
+五、如何引入css样式
+	1、行内样式/内敛样式  在标签内部(body)使用style属性，引用css样式进行编辑
+		缺点：容易造成代码的冗余度较高（较复杂）
+	2、内部（联）样式  在head标签内部使用style标签引用外部样式表，引用css样式进行编辑
+	3、外部样式  在head标签内部使用link标签，引用css样式进行编辑
+		将html和css样式相分离，css样式独立存放在相应的文件中去
+		在head的标签内部通过添加link标签引入css外部样式表
+	4、导入外部样式
+	在head标签内部使用style标签和@inport url();引用css样式进行编辑(了解就行)
+
+作业：	1、比较三者的优先级

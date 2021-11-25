@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery选择器</title>
+    <style>
+        img{
+            height: 200px;
+            width: 300px;
+            /* float: left; */
+        }
+        .nh{
+            float: left;
+        }
+        p{
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <p>jQuery工厂函数
+        1.jQuery工厂函数"$";
+        2.语法：$()
+        基本选择器
+        1.ID选择器(#id)  2.CSS类名选择器 3.标签选择器
+        $("#id")         $(".ID")        $("div")
+        2.元素选择器(element)   $("div")
+        3.类名选择器(.class)    $(".class")
+    </p>
+    <script src="../../JS/jquery-3.6.0.js" type="text/javascript"></script>
+    <script type="text/javascript"> //id选择器
+    $(document).ready(function(){
+        $("input[type='button']").click(function(){ //为按钮绑定单击事件
+            var inputValue = $("#text1").val();     //获取文本框的值
+            alert(inputValue);
+        });
+    });
+    </script>
+    <input type="text" id="text1">
+    <input type="button" value="输入值为：">
+    <script type="text/javascript">
+    $(document).ready(function(){   //元素选择器
+        $("#qie").click(function(){
+            //获取第一个div元素           //eq()是jQuery包装集的函数方法，get是DOM对象的方法
+            $("div").eq(0).html("<img src='../../../JavaScript/img/女孩.png'>男孩变成了女孩");
+            $("div").get(1).innerHTML="<img src='../../../JavaScript/img/男孩.png'>女孩变成了男孩";
+        });
+    })
+    </script>
+    <div><img src="../../../JavaScript/img/男孩.png" alt="12"></div>
+    <div class="nh"><img src="../../../JavaScript/img/女孩.png" alt="12"></div>
+    <input type="submit" value="切换图片" id="qie">
+    <p class="myclass">观察我的样式</p>
+    <p>我的默认样式</p>
+
+    <script type="text/javascript"> //类名选择器
+    $(document).ready(function(){
+        var myClass =$(".myclass");
+        myClass.css("background-color","#C50210");
+        myClass.css("color","#FFF");
+    });
+    </script>
+</body>
+</html>

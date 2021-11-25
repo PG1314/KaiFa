@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>历史记录</title>
+</head>
+
+<body>
+    <p>语法： [window.]history.property|method([parameters]) <br>
+        history的常见属性或方法<br>
+        属性 length 历史列表长度<br>
+        current 当前文档URL<br>
+        next 历史列表下一个URL<br>
+        previous 历史列表前一个URL<br>
+        方法 back() 退回前一页<br>
+        forward() 重新进入下一页<br>
+        go() 进入指定页面<br>
+        例子：<a href="javascript:window.history.length">length</a>
+        <a href="javascript:window.history.next">next</a>
+        <a href="javascript:window.history.go(2)">go()</a>
+        <a href="javascript:window.history.back()">back()</a><br><br>
+        语法 timrId=settimeout(要执行的代码,毫秒为单位的时间) //代码执行时的时延 //设置时间超时<br>
+        clearTimeout(timerid) //代码执行前的时延<br>
+    </p>
+    <script type="text/javascript">
+
+        var a = 0;
+        function showtime() {
+            var dat = new Date();
+            var NaN1 = dat.getFullYear();//年
+            var yue = dat.getMonth(); //月
+            var ate = dat.getDate();   //日
+            var hours = dat.getHours(); //时
+            var minu = dat.getMinutes();  //分
+            var seco = dat.getSeconds();  //秒
+            hours < 10 ? hours = "0" + hours : a += 1;
+            minu < 10 ? minu = "0" + minu : a += 1;
+            seco < 10 ? seco = "0" + seco : a += 1;
+            //在状态中显示时间
+            window.status = ("--------" + NaN1 + "年" + (yue + 1) + "月" + ate + "日" +
+                hours + "时" + minu + "分" + seco + "秒" + "--------");
+            window.setTimeout("showtime()", 1000);
+        }
+        showtime();
+    </script>
+   </body>
+
+</html>

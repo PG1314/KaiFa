@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画制作</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+    <style>
+        @keyframes comein{
+            0%{
+                transform:translateX(-100px)
+            }
+            100%{
+                transform:translateX(100px)
+            }
+        }
+        .v-enter-active{
+            animation: comein 3s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return{
+                    isShow:false
+                }
+            },
+            methods:{
+                hanldClick(){
+                    this.isShow = !this.isShow
+                }
+            },
+            template:`
+            <transition>
+                <div v-if="isShow">技术讲程序</div>  
+            </transition>   
+            <div><button @click="hanldClick">切换动画效果</button></div>
+            `
+            // v-if  //判断值，并实现简单隐藏效果
+        })
+        const vm=app.mount("#app")
+    </script>
+</html>

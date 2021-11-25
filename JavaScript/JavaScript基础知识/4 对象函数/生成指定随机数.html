@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机数</title>
+    <script type="text/javascript">
+        function a(digit){
+            var a1="";
+            for(i=0;i<digit;i++){
+                a1=a1+(Math.floor(Math.random()*10));
+            }
+            alert(a1);
+        }
+    </script>
+</head>
+<body>
+<p> 请输入要生成的随机数</p>     
+<form name="form">
+<input type="text" name="digit" >
+<input type="button" value="生成" onclick="a(form.digit.value)">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM节点</title>
+    <script src="../../JS/jquery-3.6.0.js" type="text/javascript"></script>
+</head>
+<body>
+    <p><h3>创建节点</h3>
+        $(document).ready(function(){
+            方法一：
+            var $p=$(<p></p>>);
+            $p.html("<span style='color: #FF0000'>方法一添加的内容</span>");
+            方法二：
+            var $txtp=$("<p><span style='color: aqua;'>方法二添加的内容</span> ")
+            $("body").append($txtp);
+            方法三：
+            $("body").append("<p><span style='color: beige;'>方法三添加的内容</span>");
+            });
+        <h3>插入节点</h3>
+        在元素内部插入
+        append(content) 为所有匹配的元素的内部最加内容  $("#B").append("<p>A</p>>");  //向id为B的元素中最加一个段落 <br>
+        appendTo(content)   将所有匹配元素添加到另一个元素的元素集合中  $("#B").appendTo("#A"); //将id为B的元素最加到id为A的元素后面 <br>
+        prepend(content)    为所有匹配的元素的内部前置内容  $("#B").prepend("<p>A</p>>");   //向id为B的元素内容前添加一个段落 <br>
+        prependTo(content)  将所有匹配元素前置到另一个元素的元素集合中  $("#B").prependTo("#A");    //将id为B的元素添加到id为A的元素前面 <br>
+        注意：$("<p>A</p>").appendTo("#B"); 等同于  $("#B").append(<p>A</p>);   prepend于prependTo用法相同 <br>
+        在元素外部插入 <br>
+        after(content)  在每个匹配的元素之后插入内容    $("#B").after("<p>A</p>"); //向id为B的元素的后面添加一个段落 <br>
+        insertAfter(content) 将所有匹配的元素插入到另一个指定元素的元素集合的后面  $("<p>test</p>").insertAfter("#B"); //将要添加的段落插入到id为B的元素的后面 <br>
+        before(content) 在每个匹配的元素之前插入内容    $("#B").before("<p>A</p>"); //向id为B的元素内容前添加一个段落 <br>
+        insertBefore(content)   将所有匹配的元素插入到另一个指定元素集合的前面  $("#B").insertBefore("#A"); //将id为B的元素添加到id为A的元素前面 <br>
+        <h3>删除、复制与替换节点</h3>
+        empty(),remove([expr])方法  empty()方法用于删除匹配元素集合所有子节点，并不删除该元素，remove()方法删除所有匹配元素 <br>
+        复制节点
+        clone()方法 该方法有俩中形式    1.不带参数，用于克隆    2.带一个布尔型参数，参数为true时，克隆匹配元素所有的事件处理并选中副本， 当参数为false时，表不复制 <br>
+        替换节点
+        replaceAll(selector),replaceWith(content)    //replaceAll(scelctor)方法匹配替换所有selector匹配到的元素，replaceWith()所有匹配的元素替换指定HTML或DOM元素 <br>
+    </p>
+    <script type="text/javascript">    //替换事件
+    $(document).ready(function(){
+        //替换id为div1的元素
+        $("#div1").replaceAll("<div>replaceAll(方法替换)</div>");
+        $("#div2").replacewith("<div>replacewiht(方法的替换)</div>");
+
+    });
+    </script>
+    <script type="text/javascript"> //克隆事件
+    $(document).ready(function(){
+        $("input").bind("click",function(){     //为按钮绑定事件
+            $(this).clone().insertAfter(this);  //复制自己但不复制事件
+        })
+    });
+    </script>
+    <input type="button" value="按钮">
+    <script type="text/javascript"> //删除事件
+    $(document).ready(function(){
+        $("#div1").empty();
+        $("#div2").remove();
+    });
+    </script>
+    <div id="div1" style="border: 1px solid #0000FF;height: 26px;"><span>谁言存草心，报道三春晖</span></div>
+    <div id="div2" style="border: 1px solid #0000FF;height: 26px;"><span>国破山河在，城春草木深</span></div>  
+</body>
+</html>

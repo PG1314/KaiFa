@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态添加标签</title>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <th colspan="3">编辑个人信息</th>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td colspan="2"><form action="" name="form"><input type="text" readonly value="PG"></form></td>
+        </tr>
+        <tr>
+            <td>电话</td>
+            <td colspan="2">
+                <form action="" name="form1">
+            <script type="text/javascript">
+                function alter(){
+                    var dh=document.createElement('input');
+                    dh.type='text'
+                    document.form1.appendChild(dh);
+                }
+            </script>
+            </form>
+            </td>
+        </tr>
+        <tr>
+            <td>职位</td>
+            <td colspan="2">
+                <form action="" name="form2">
+            <script type="text/javascript">
+                function alter1(){
+                    var dh=document.createElement('input');
+                    dh.type='text'
+                    document.form2.appendChild(dh);
+                }
+            </script>
+            </form>
+            </td>
+        </tr>
+        <tr>
+             <td colspan="3" align="center"><form action="" name="form3" display: inline-block;>
+                 <button value="修改" onclick="alter(),alter1(),alter2()">123</button>
+                
+                    <script type="text/javascript">
+                        function alter2(){
+                            var dh=document.createElement('input');
+                            dh.type='submit'
+                            document.form3.appendChild(dh);
+                        }
+                    </script>
+             </form>
+            </td>
+           
+        </tr>
+    </table>
+</body>
+</html>

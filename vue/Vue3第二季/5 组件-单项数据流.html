@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计数器</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return{
+                    counter:1,              //局部数据
+                }
+            },
+            template:`
+                <h2>JSPang.com</h2>
+                <Counter :counter="counter" />
+            `
+        })
+        app.component("Counter",{
+            props:['counter'],
+            data(){
+                return{
+                    newCounter: this.counter //全局数据变量定义
+                }
+            },
+            template:`
+                {{counter}}<button @click="counter+=1">增加数量</button>
+                {{newCounter}}<button @click="this.newCounter+=1">增加数量</button>
+            `
+            // {{counter}}<button @click="counter+=1">增加数量</button>     //父向子，单向绑定数据
+            //     {{counter}}<button @click="this.newcounter+=1">增加数量</button>  //全局数据绑定
+        })
+        const vm=app.mount("#app")
+    </script>
+</html>

@@ -1,0 +1,274 @@
+<HTML框架>
+<! DOCTYPLE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+
+<HTML5 框架>
+<!DOCTYPLE html>
+<html>
+<header>
+  <meta charset="UTF-8">
+  <title></title>
+</header>
+<nav>
+</nav>
+<section>
+</section>
+<article>
+</article>
+<aside>
+</aside>
+</html>
+
+<基础标签>
+标题标签 <h1></h1>~<h6></h6>
+段落标签 <p></p>
+链接标签 <a href="#"></a>
+连接属性：target(目标)  值：blank(空白的)
+图片标签 <img src="" width="20" height="20"></img>
+图片属性：alt(无图片输出值)="value"
+<单标签>
+HTML水平线  换行
+HTML水平线  <hr />
+换行  <br>
+
+<文本格式化标签>    //<计算机输出标签>不常用
+加粗文本  <b>
+大号字    <big>
+重文字    <em>
+斜体字    <i>
+小号字    <small>
+加重语气  <strong>
+下标字    <sub>
+上标字    <sup>
+插入字    <ins>
+删除字    <del>
+
+<引用和术语定义>
+定义缩写  <abbr>
+定义首字母缩写  <acronym>
+定义地址  <address>
+定义文字方向    <bdo>
+定义长的引用    <blockquote>
+定义短的引用语  <q>
+定义引用、引证  <cite>
+定义一个项目    <dfn>
+
+<表格标签>
+定义表格    <table>
+定义表格标题<caption>
+定义表头    <th>
+定义表行    <tr>
+定义单元格  <td>
+定义表格页眉<thead>
+定义表格主体<tbody>
+定义表格页脚<tfoot>
+定义表格列属性<col>
+定义表格列的组<colgroup>
+
+<列表标签>
+定义无序列表    <ul>
+列表           <li>
+定义有序列表    <ol>
+列表           <li>
+自定义列表     <dl>
+每个自定义列表项以 <dt> 开始。每个自定义列表项的定义以 <dd> 开始
+
+<块标签>
+独占一行  <div>  <span>
+内联元素不会独占一行 如：<img> <b> <a>
+
+<内联框架>
+<iframe>
+属性 align 水平垂直对齐
+属性 frameborder 是否有边框
+属性 height 高度
+属性 width  宽度
+属性 scrolling 是否有滚轮
+
+<input标签>
+<form>
+<input>
+<form>
+属性：aling 水平对齐方式
+属性 accept  值 mime_typ 规定上传文件类型
+属性 alt  定义代替文本
+属性 autocomplete 是否使用字段完成功能（提交后是否清空数据）
+属性 checked 是否自动获取焦点
+属性 step 输入字的合法数字间隔
+
+<HTML头部元素>
+<head>  定义关于文档的信息
+<title> 定义文档标题
+<base>  定义页面上所有链接默认地址或默认目标
+<link>  定义文档与外部资源的关系
+<meta>  定义关于HTML文档的元数据
+<script>定义客户端脚本
+<style> 定义文档样式信息
+
+<HTML计算机元素> //目前不用，暂未略举
+
+<HTML5 语义元素>
+<header>
+<nav>
+<section>
+<article>
+<aside>
+<footer>
+
+<HTML实体>  //实体名  实体编号(ASK值)   Emoji 符号
+© 版权（copyright） &copy;
+  空格              &nbsp;
+" 引号              &quot;
+
+@charset "UTF-8"
+
+<html5元素>
+<section>元素  部分、章节
+<article>元素  文章
+<aside>元素    离开、在旁边
+<header>元素   页眉
+<footer>元素   页脚
+<nav>元素      菜单、导航
+<figure>元素   数字、图像
+<main>元素     页面重要内容
+新增元素
+<video>元素    视频   <video src="/video.ogg" controls>video元素</video>
+<audio>元素    音频   <audio src="/audio.ogg">audio元素</audio>
+<embed>元素    插入多媒体 <embed src="embed.wav"/>
+<mark>元素     标志、高亮<mark></mark>
+<progress>元素 进程 <progress></progress>
+<meter>元素    度量衡 <meter></meter>
+<ruby>元素     注释   <ruby>中国</ruby>
+<rt>元素       字符   <rt>zg</rt >
+<rp>元素       在ruby中表示注释   <ruby><rp></rp></ruby>
+<wbr>元素      软换行，当宽不够时自动换行
+<canvas>元素   图形   <canvas id="mycanvas" width="50" height="50"><canvas>
+<details>元素  细节   <details><summary>HTML</summary>This document</details>
+<detagrid>元素 注意细节 <datagrid></datagrid>
+<output>元素   输出   <output></output>
+<source>元素   媒介来源 <source>
+<dialog>元素   对话框   <dialog></dialog>
+<iframe>元素   框架、结构 <iframe><iframe>
+
+<全局属性>
+contentEditable属性 默认含有inherit(继承)状态 为true着激活状态    //元素是否可编辑
+isContentEdiable属性  为false着激活状态   
+<h2>可编辑列表<h2>
+<ul contentEditable="true">
+  <li>列表1</li>
+  <li>列表2</li>
+</ul>
+designMode属性  整个页面是否可编辑
+hidden属性      元素是否可见    属性值为true时，元素不可见
+spellcheck属性  拼写检查且必须声明属性值true/false
+tabindex属性    按顺序使用TAB获得焦点
+
+让监听器只监听一次
+<body>
+<input id="button" type="button" value="点击我"></intut>
+<script>
+document.getElementById("button").addElementListtener("click",function(){
+    alert("按钮被点击！");
+  },{
+  once: true
+  });
+</script>
+</body>
+
+<html5结构详讲>
+article元素   文档
+<a src="1 article示例.html"></a>
+section元素   文档
+<a src="1 section示例.html"></a>
+aside元素   文档
+<a src="1 aside示例.html"></a>
+nav元素   文档
+<a src="1 nav示例.html"></a>
+time标签pubdata属性
+<a src="1 time示例.html"></a>
+各浏览器暂不支持time属性
+address元素  
+用于填写作者详细及开发信息
+main元素
+网页的重要内容，有且只有一条
+<a src="1 main示例.html"></a>
+
+<html网页结构>
+<blockquote>标签
+打断子节点标题元素（h1-h6）
+HTML5block大不分不支持需样式声明
+nav,article,section,aside{display:block}
+
+<表单及其他新增和改良元素>
+formaction="" 将表单提交给文档
+formmethod="" 将每个表单元素指定不同方法提交
+formenctype="" 指定表单发送服务器之前如果对表单内部数据进行编码，如下
+属性值 application/x-www-form-urlencoded 在发送前编码所有字符，当action属性值为get时，浏览器用x-www-form-urlencoded
+的编码方式把表单数据转化成一个字符串（如：namel=value|&name2=value2...）然后把这个字符串添加到
+提交的目标URL值的后面，使其成为新的目标URL地址。该属性值为表单元素的enctype的默认属性值
+属性值 multipart/form-data  不对字符编码。在使用包含文件上传控件表单时，必须使用该值
+属性值 text/plain 表单数据中的空格被转换为"+"号、但不对表单数据中的特殊字符进行编码
+<a src="1 form示例.html"></a>
+
+表单内元素formtarget属性
+_black 在新的浏览器窗口中打开
+_self  target属性默认值，在相同的框架（frame）中打开
+_parent 在当前框架(frame)的父框架(frame)中打开
+_top    在当前浏览器窗口中打开
+framename 在指定的框架(frame)中打开
+<a src="7 form示例.html"></a>
+
+autofocus属性打开页面自动获取焦点
+<input type="text" autofocus> 需要使用JavaScript方法如：control.focus()
+required属性  如果提交元素中内容为空白，着不允许提交提示提示文字，提示输入内容
+labes属性      
+<a src="8 labels示例.html"></a>
+control属性
+<a src="9 control示例.html"></a>
+placeholder属性
+未输入文本时，输入框中显示提示文字。提示文本可以修改样式，如
+/* Firofox 对齐居中 */
+input:-mox-placeholder{
+  color:blue;
+}
+/* Webkit数列两侧居中 */
+input：：-webkit-input-placeholder{
+  color:blue;
+}
+list属性
+<a src="10 list示例.html"></a>
+autocomplete属性  属性为on时可以显示指定候补输入的数据列表
+pattern属性  设置某个格式的正则表达式时，提交时对这些数据进行检查并判断是否提交
+<form>请输入指定格式的内容：<input pattern="[0-9]|[A-Z]|{3}" name="part">
+<input type="submit"></form>
+selectionDirection
+<a src="11 selectionDirection示例.html"></a>  未实现
+复选框indeterminate属性
+
+textarea元素的maxlength属性与wrap属性
+maxlength属性  限制元素输入个数
+wrap属性       可指定值为soft与hard。当为hard时，如果textarea元素输入文字超过使用textarea元素的cols属性
+所限制定的每行中可显示文字导致文字换行(自动换行)，    当属性为soft时，不自动换行 属性值必须为cols
+<a src="12 textarea示例.html"></a>
+
+input元素种类
+search    与text文本框类似，但是用于搜索，
+tel       与text文本框类似，但是用于电话
+url       要求用户必须与正确输入email格式的文字
+date      日期输入文本框
+month     月份输入文本框
+week      星期输入文本框
+time      时间输入文本框
+datetime-local  日期与时间输入文本框
+number    数值输入文本框，不能输入数值以外文本，否则以空白进行提交
+range     只允许输入一段范围内数值的文本框，具有max，min属性，默认0-100
+color     颜色选择文本框
+<a src="13 input元素种类.html"></a>

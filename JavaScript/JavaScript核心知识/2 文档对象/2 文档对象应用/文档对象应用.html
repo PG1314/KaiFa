@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档应用</title>
+    <style>
+        span{
+            width: 20%;
+            height: 30%;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- </script>
+    <script type="text/javascript"> //获取URL
+    document.write('<br>当前页面URL为：'+document.URL);
+    </script> -->
+    <span><a href="#">设置3个状态文字</a></span>   
+    <script type="text/javascript">     //设置超链接文本颜色
+    document.linkColor='blue';       //未被访问的颜色
+    document.alinkColor='#000';      //访问时的颜色
+    document.vlinkColor='#0CF';      //访问过的颜色
+    /* alert(document.linkColor='blue'); */  //其他练习，按输入颜色进行更改超链接文本颜色
+    </script>   
+    <!-- <script type="text/javascript">       //设置文档前景色和背景色
+    //document.bgColor=('blur');
+    var color = new Array('#111','#222','#333','#444','#555','#666','#777','#888','#999');
+    var n = 0;
+    function colour(){
+        n++;
+        if(n==(color.length-1)) n=0;
+        document.bgColor='color[n]'
+        document.fgColor='color[n-1]'
+        setTimeout("colour()",1000);
+    }
+    colour();
+</script> -->
+</body>
+</html>

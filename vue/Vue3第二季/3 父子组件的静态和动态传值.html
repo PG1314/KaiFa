@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件传值</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{
+                    name:123,
+                    pay:()=>{
+                        alert('给你500元')
+                    }
+                }
+            },
+            methods:{
+                pay(){
+                    alert("200");
+                }
+            },
+            template:`
+                <h2>JSPang.com</h2>
+                <Son :name="name" />  
+                <Xiaojiejie :pay="pay" />   
+            `
+            // <Son v-bind:name="name" />  简写 <Son :name="name" />   父组件向子组件传值(动态传值)
+            // <Son name="技术胖" /> // 父组件向子组件传值(静态传值)
+        })
+        app.component("Xiaojiejie",{
+            props:['pay'],                  //props  接收pay值
+            methods:{
+                handleClick(){
+                    alert("请付钱。。。。")
+                    this.pay()
+                }
+            },
+            template:`
+            <div @click="this.handleClick()">和姐姐，打招呼！</div>
+            `
+        })
+        app.component('Son',{
+            props:['name'],     
+            template:`
+            <div>{{typeof name}} div</div>  
+            `
+            // typeof 查看类型
+        })
+        const vm = app.mount("#app")
+    </script>
+</html>

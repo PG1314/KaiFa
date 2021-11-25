@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素属性</title>
+    <script src="../../JS/jquery-3.6.0.js" type="text/javascript"></script>
+</head>
+<body>
+    <p><h3>元素属性</h3>
+    attr(name)  获取匹配的第一个元素的属性值(无值返回undefined) $("img").attr('src');   //获取页面中第一个img元素的src属性值 <br>
+    attr(key,value) 所有匹配元素设置一个属性值  $("img").attr("title","不望海风，自成大海");    //为图片添加标题属性 <br>
+    attr(key,fn)    为所有匹配的元素设置一个函数返回值的属性(fn代表函数)    $("#fn").attr("value",function(){return this.name});    //将元素的名称作为value属性值 <br>
+    attr(properties)    为所有匹配元素以集合({名:值,名:值})同时设置多个属性 $("img").attr(src:"text",title:"图片示例"); <br>
+    removeAttr(name)    所有匹配元素删除一个属性    $("img").removeAttr("title");   //移除所有图片的title属性 <br>
+    </p>
+    <p><h3>对元素CSS样式进行操作</h3>
+    addClass(class) 为所有匹配的元素添加指定的CSS类名   $("div").addClass("blue line"); //为全部div元素添加blue和line两个CSS类 <br>
+    removeClass(class)  为所有匹配到元素删除全部或指定的CSS类   $("div").removeClass("line");   //删除全部div元素名称中line的CSS类 <br>
+    toggleClass(class)  如果存在(不存在)就删除(添加)一个class类 $("div").toggleClass("yellow"); //当div元素中存在yellow的css类是，则删除该类，反之添加 <br>
+    toggleClass(class,switch)   如果Switch参数为true，则添加对应的CSS类，否则删除，通常Switch参数为布型变量   $("img").toggleClass("show",true)   //为img添加css类show <br>
+    修改css属性实现 <br>
+    css(name)   返回第一个匹配元素的样式属性    $("div").css("color");  //获取第一个匹配的div元素的color属性 <br>
+    css(name,value) 为所有匹配元素的指定样式设置值  $("img").css("border","1px solid #000000"); 为全部img元素设置边框样式 <br>
+    css(properties) 以{属性:值，属性:值,.....}的形式为所有匹配的元素设置样式属性    $("tr").css({"background-color":"#0A65F3"},"font-size":"14px","color":"#FFF")  //设置背景色、字体、颜色 <br>
+    </p>
+</body>
+</html>

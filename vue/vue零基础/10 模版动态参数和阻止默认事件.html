@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo10</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app"></div>    
+
+</body>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{         //模版动态参数
+                    message:'jspang.com',
+                    name:"title"
+                }
+            },
+            methods:{
+                handlClick(){
+                   alert('欢迎光临浪漫之都');
+                },
+                hanldeButton(e){
+                    e.preventDefault()      //阻止默认事件
+                    alert("jaspang.com")
+                }
+            },
+            //v-on还有一个简写方法，就是可以不屑v-on:用@代替
+            //v-bind: 也有简写方法, 如  :title="message"
+            // data定义name时 ，可如下写发  :[name]="message"
+            template:`<h2 
+                        @click='handleItemClick'
+                        v-html="message"
+                        v-once
+                        v-bind:title="message"  
+                        >
+                        </h2>
+                        <div>{{count>2?'大':'小'}}</div>
+                        <form action="https://jspang.com" @click="hanldeButton">
+                        <button type="submit">默认提交</button>
+                        </form>`
+        })
+        const vm = app.mount("#app")
+    </script>
+</html>

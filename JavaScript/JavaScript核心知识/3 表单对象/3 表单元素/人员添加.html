@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人员添加</title>
+    <style>
+        table{
+            text-align: center;
+            height: 300px;
+            width: 250px;
+        }
+    </style>
+    <script type="text/javascript">
+        function you(){                             //出现自动刷新特性，目前无法选择
+            var jkx = myform.kx.length;    //获取可选择中的数组个数
+            for(var n=jkx-1;n+1>=0;n--){
+                  if(myform.kx[n].selected){  //selected(选中的) 如果选中选中的
+                     var myOptin = new Option(myform.kx[n].text,
+                                              myform.kx[n].value);   //创建option对象   
+                     myform.yx.options[myform.yx.options.length]=myOptin;   //'已选职位'菜单添加选项
+                     myform.yx.remove(n);      //删除移动的选择
+                //document.write(n); 
+                    }
+                }
+            }
+        // function toJob(){                    //
+        //     var myjoblength = document.myform.jx.length;
+        //     for(var n = myjoblength-1; n>-1; n--){
+        //         var myOPtion = new Option(document.myform.myjob[i].text,document.myform.myjob[n].value);
+        //         document.myform.job.options[document.myform.job.options.length] = myOption;
+        //         document.myform.myjob.remove
+        //     }
+        // }
+        </script>
+</head>
+<body>
+    <form id="myform">
+    <table> <!--      rowspan 合行  colspan 合列 -->
+       <tr><th colspan="3">小黄鸭职员新增</th></tr>      
+        <tr>  
+            <td>可选</td>
+            <td></td>
+            <td>已选</td>
+        </tr>
+        <tr>
+            <td>
+                <select name="kx" size="5" multiple="multiple">
+                <option value="彭">彭</option>
+                <option value="李">李</option>
+                <option value="胡">胡</option>
+                <option value="王">王</option>
+                <option value="赵">赵</option>
+            </select>
+            </td>
+            <td>
+                <input type="submit" onclick="you()" value=">>"><br>
+                <input type="submit" onclick="zuo()" value="<<">
+            </td>
+            <td><select name="yx" size="5" multiple>
+            </select></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

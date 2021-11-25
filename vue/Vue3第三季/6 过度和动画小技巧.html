@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画小技巧</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+    <style>
+        @keyframes comein{
+            0%{
+                transform: translateX(-120px)
+            }
+            100%{
+                transform: translateX(0px)
+            }
+        }
+
+        @keyframes comeout{
+            0%{
+                transform: translateX(0px)
+            }
+            100%{
+                transform:translateX(-120px)
+            }
+        }
+
+        .v-enter-from,
+        .v-leave-to{
+            opacity: 0;
+        }
+        .v-enter-to,
+        .v-leave-from{
+            opacity:1;
+        }
+        .v-enter-active{
+            animation: comein 3s;
+            transition: opacity 3s ease-out
+        }
+        .v-leave-active{
+            animation: comeout 3s;
+            transition: opacity 3s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return{
+                    isShow:true
+                }
+            },
+            methods:{
+                hanldClick(){
+                    this.isShow = ! this.isShow
+                }
+            },
+            template:`
+            <transition type="animation">
+            <div v-if="isShow">技术讲程序</div>
+            </transition>
+            <transition duration="1000">
+            <div v-if="isShow">技术讲程序</div>
+            </transition>
+            <transition duration="enter:2000,leave:3000">
+            <div v-if="isShow">技术讲程序</div>
+            </transition>
+            <button @click="hanldClick">动画切换</button>
+            `
+        })
+        const vm=app.mount("#app")
+    </script>
+</html>

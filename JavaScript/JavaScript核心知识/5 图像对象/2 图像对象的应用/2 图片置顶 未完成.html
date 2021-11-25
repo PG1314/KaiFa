@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>置顶</title>
+</head>
+<body>
+    <div><img src="../../../img/黄鸭.gif" alt="无" id="huan" style="height: 200px;width: 200px;top: 0px;"></div><br>
+    <div><input type="image" name="image1" id="image2" src="../../../img/黄鸭.gif" style="width: 300;height: 250px;border: 0px;"></div>
+    <script type="text/javascript">
+    var IMgW=parseInt(image1.width);    //获取图片返回的宽度
+    function perm(){
+        //获取纵向滚动条滚动的距离
+        var RealTop=parseInt(document.documentElement.scrollTop);
+        buyTop=Top+RealTop;                             //获取图片方向的绝对位置
+        document.all[tfloor].style.top=buyTop+'px';     //设置图片在垂直方向的绝对位置
+        //获取图片的水平方向的绝对位置
+        var buyleft=parselnt(document.docuemntElement.scrolILeft)+
+                    parseInt(document.documentElement.clientWidth)-IMgW;
+        document.all[tfloor].style.left=buyleft-left+'px';  //设置图片在水平方向的绝对位置
+    }
+    setInterval('perm');
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择框</title>
+    <style>
+        #kj{
+        height: 200px;
+        width: 300px; 
+        text-align: left;
+        }
+        #zc{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="kj">
+     <form action="" id="form1" method="post" ><!--// -->
+        用户名：<input type="text" name="name" value=""><br>
+        性别：<input type="radio" value="男" name="sex" checked="checked">男<input type="radio" value="女" name="sex">女<br>
+        年龄：<select name="" id="nl">
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+        </select><br>
+        密码：<input type="password" placeholder="请输入密码" name="pas1"><br>
+        确认密码：<input type="password" placeholder="请再次输入密码" name="pas2"><br>
+        备注：<textarea name="bz" id="" cols="29" rows="10" placeholder="备注内容"></textarea><br>
+        <input type="submit" name="tj" onclick="b()" value="注册" ><br>
+    </form>
+    </div>
+    <script type="text/javascript">
+    // 属性：id name type value length checked(选中时未true,未选择则false) disabled(按钮或复选框是否被禁用,默认值为true)
+    // 方法：blur() focus() click()
+    </script>
+    <script type="text/javascript"> //个人信息注册 
+        function b(){
+            if(form1.name.value==""||form1.pas1.value==""||form1.pas2.value==""){
+                alert("输入框不能为空");
+                return false;
+            }
+            if(form1.pas1.value!=form1.pas2.value){
+                alert("两次密码不一致");
+                return false;
+            }
+            else
+                alert("注册成功"),
+                alert("您注册的信息如下：\n用户名："+form1.name.value+"\n性别："+form1.sex.value+"\n年龄："+form1.nl.value+"\n密码:"+form1.pas2.value+"\n备注："+form1.bz.value);           
+            return true;
+        }
+    </script>
+</body>
+</html>

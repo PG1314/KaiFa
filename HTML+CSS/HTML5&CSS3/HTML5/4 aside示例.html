@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aside元素</title>
+</head>
+<body>
+    <header>
+        <h1>F#入门</h1>
+    </header>
+    <article>
+        <h1>第四节 语法闭包</h1>
+        <p>lambda表达式可以创建词法闭包。。。（文章正文）</p>
+        <aside>
+            <!-- 因为这个aside元素被放置在一个article元素内部，所以分析器将
+            这个aside元素的内容理解成是和article元素的内容相关联。 -->
+            <h1>名词解释</h1>
+            <dl>
+                <dt>F#</dt>
+                <dd>F#为。net2010中引用的新型函数型编程语言</dd>
+            </dl>
+            <dl>
+                <dt>语法闭包</dt>
+                <dd>语法闭包是指，创建lambda表达式的环境保存起来。。。（详细解释）</dd>
+            </dl>
+        </aside>
+        <aside>
+            <nav>
+                <h2>评论</h2>
+                <ul>
+                    <li><a href="#">erway</a>10-24 14:25</li>
+                    <li><a href="#">太阳雨</a>10-22 23:48<br><a href="#">顶，拜读一下老牛的文章</a></li>
+                    <li><a href="#">新浪官方</a>08-12 08:50<br><a href="#">恭喜！您已经成功开通了博客</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </article>
+    
+</body>
+</html>

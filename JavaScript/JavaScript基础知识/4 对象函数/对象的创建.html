@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的创建</title>
+
+</head>
+<body>
+    <script type="text/javascript">
+    var grxx={              //自定义创建对象
+        name:"P G",
+        sex:"男",
+        age:18
+    }
+    document.write("name: "+grxx.name);
+    document.write("<br>sex: "+grxx.sex);
+    document.write("<br>age: "+grxx.age);   
+
+    function one(name1,sex1,age1){ 
+        this.name = name1+1;
+        this.sex = sex1+1;
+        this.age = age1+1;
+    document.write("<br>name: "+this.name);
+    document.write("<br>sex: "+this.sex);
+    document.write("<br>age: "+this.age);
+    }
+    var one1 = new one(1,2,3); //自定义创建构造函数
+    document.write("<br>输出name："+one1.name+"<br><br>");
+    
+    //小知识， object.prototype.name=value     object(构造函数名) name(要添加的属性名或方法) value(添加属性值或方法)
+    function student(name3,sex3,age3){
+        this.name = name3;
+        this.sex  = sex3;
+        this.age  = age3;
+    }
+    student.prototype.show=function(){
+        alert("姓名："+this.name+"\n性别"+this.sex+"\n年龄"+this.age);
+    }
+    var three = new student("pg","男",18);
+    three.show();
+
+    // 通过object对象创建自定义对象
+    // obj = new Object([value]) 语法
+    var stud =new  Object();    //空的对象
+    stud.name="张三";
+    stud.sex="男";
+    stud.age=16;
+    document.write("名字："+stud.name+"<br>"+stud.sex,stud.age);
+    </script>
+
+</body>
+</html>

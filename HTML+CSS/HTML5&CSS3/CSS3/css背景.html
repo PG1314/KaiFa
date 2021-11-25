@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS背景</title>
+    <style>
+        body{
+            background-image: url(../images/黄鸭.gif);
+            /* background-size:100px 100px; */
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background: 100px,100px no-repeat fixed url(../images/黄鸭.gif) ;
+        }
+        div{
+            height: 100px;
+            width: 300px;
+            opacity: 0.5;/* 透明度 */
+        }
+        li{
+            float: left;
+            list-style: none;
+            padding-right:16px;;
+        }
+        a{
+            color: aqua;
+            text-decoration:none;
+        }
+        image{
+            height: 50px;
+            width: 50px;
+            /* css背景可简写 如：background: #ffffff url("tree.png") no-repeat right top; */
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS背景</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#background-color">背景颜色</a></li>
+            <li><a href="#background-image">背景图片</a></li>
+            <li><a href="#background-repeat">背景重复</a></li>
+            <li><a href="#background-attachment">背景附件(背景固定)</a></li>
+            <li><a href="#background-position">背景位置</a></li>
+        </ul><br>
+    </nav>
+    <section>
+        <article>
+            <h2 id="background-color">background-color</h2>
+            <section>
+                <div style="background-color:#666">你好世界</div>
+            </section>
+        </article>
+        <article>
+            <h2 id="background-image">background-image</h2>
+            <section>
+                <div style="background-image: url(../images/女孩.png);">你好世界</div>
+            </section>
+        </article>
+        <article>
+            <h2 id="background-repeat">background-repeat</h2>
+            <section>
+                <div style="background-image: url(../images/黄鸭.gif);background-repeat: repeat-x;">你好世界</div>
+            </section>
+        </article>
+        <article>
+            <h2 id="background-attachment">background-attachment</h2>
+            <section>
+                <div style="background-image: url(../images/黄鸭.gif); background-attachment: fixed;">你好世界</div>
+            </section>
+        </article>
+        <article>
+            <h2 id="background-position">background-position</h2>
+            <section>
+                <div style="background-image: url(../images/黄鸭.gif); background-position: center;">你好世界</div>
+            </section>
+        </article>
+    </section>
+</body>
+</html>

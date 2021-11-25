@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑动效果</title>
+    <script src="../../JS/jquery-3.6.0.js" type="text/javascript"></script>
+</head>
+<body>
+    <p><h3>滑动显示匹配元素</h3>
+    语法：slideDown(speed,[callback])   spped//动画时长 show（600毫秒） normal fasl calback//回调函数   $("#ad").slideDown(300);   
+    <h3>滑动隐藏匹配元素</h3>
+    语法：shideUp(speed,[calback])  $("#ad").slideUp(300);
+    <h3>通过高度的变化动态切换元素的可见性</h3>
+    语法：slideToggle(speed,[callback])     $("#flag").click(function){$("#menu").slideToggle(300);}    //显示或隐藏菜单
+    </p>
+    <div id="top"></div>
+    <dl>
+        <dt>员工管理</dt>
+        <dd>
+            <div class="item">添加员工信息</div>
+        </dd>
+        <dt>招聘管理</dt>
+            <dd>
+                <div class="item">浏览应聘信息</div>
+                <div class="item">添加应聘信息</div>
+                <div class="item">浏览人才库</div>
+            </dd>
+        <dt>薪酬管理</dt>
+            <dd>
+                <div class="item">薪酬登记</div>
+                <div class="item">薪酬调整</div>
+                <div class="item">薪酬查询</div>
+            </dd>
+        <dt class="title"><a href="#">退出系统</a></dt>
+    </dl>
+    <div id="bottom"></div>
+    <script type="text/javascript"> //实现申缩式导航菜单
+    $(document).ready(function(){
+        $("dd").hover();
+        $("dt[class!=title]").click(function(){
+            if($(this).next().is(":hidden")){
+                $(this).css("background","#999");
+                $(this).next().slideDown("slow");
+            }else{
+                $(this).css("background","#666");
+                $(this).next().slideUp("slow");
+            }
+        });
+    });
+    </script>
+</body>
+</html>

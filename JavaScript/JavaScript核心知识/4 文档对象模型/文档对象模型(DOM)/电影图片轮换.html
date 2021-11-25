@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        img{
+            height: 300px;
+            width: 100%;
+            
+            /* display:none;  //根本上隐藏，  */        
+        }
+        div{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a name=i href="#"><img src="../../../img/黄鸭.gif" alt="wu"></a>
+        <a name=i href="#"><img src="../../../img/女孩.png" alt="wu"></a>
+        <a name=i href="#"><img src="../../../img/男孩.png" alt="wu"></a>
+        <a name=i href="#"><img src="../../../img/雪1.gif" alt="wu"></a>
+    </div>
+    <script type="text/javascript">
+    var len = document.getElementsByName("i");
+    var pos = 0;
+    function lpt(){
+        len[pos].style.display="none";
+        pos++;
+        if(pos == len.length) pos=0;        //重新播放
+        //if(pos != 0) len[pos-1].style.display="none";      //隐藏元素
+        len[pos].style.display = "block";   //显示元素
+    }
+    setInterval('lpt()',3000);
+    </script>
+</body>
+</html>

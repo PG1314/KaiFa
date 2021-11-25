@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义</title>
+    <script src="../../JS/jquery-3.6.0.js" type="text/javascript"></script>
+    <style>
+        img{
+            float: left;
+            width: 50%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <p><h3>自定义动画</h3>
+    animate(params,speed,callback)  params 表示一个包含属性和值的映射，可含多个属性 如：{left:"200px",top:"100px"}
+    speed   表示动画运行速度    callback    表示一个回调函数
+    示例：script type="text/javascript">
+    $().ready(function(){
+        $("#fish").animate({left:300},1000)
+        .animate({top:200},1000)
+        .animate({left:0},200)
+        .animate({top:0},200);
+        });
+    /script>
+    <h3>停止动画</h3>
+    语法：stop(clearQueue,gotoEnd)  clearQueue表示是否清空未执行完的动画列表(true表示清空动画列表)，gotoEnd表示是否让正在执行的动画达到结束状态(true直接到达)
+    </p>
+    欢迎来到奥纳影城<hr />
+    <div class="leftcurtain"><img src="../../../img/女孩.png" alt="wu"></div>
+    <div class="rightcurtain"><img src="../../../img/男孩.png" alt="my"></div>
+    <a href="#" class="rope">拉开幕帘</a>
+    <button id="button1">停止动画</button>
+    <script type="text/javascript"> //实现幕帘的效果
+    $(document).ready(function(){
+        var curtainopen = false //定义布尔型变量
+        $(".rope").click(function(){    //点击超链接时
+            $("this").blur();       //超链接失去焦点
+            if(curtainopen == false){
+                $(this).text('关闭帘幕');
+                $(".leftcurtain").animate({width:'60px'},4000);   //设置左侧幕帘
+                $(".rightcurtain").animate({width:'60px'},4000);    //设置右侧幕帘
+                curtainopen = true; //变量值设为true
+            }else{
+                $(this).text("拉开幕帘");
+                $(".leftcurtain").animate({width:'50%'},2000);   //设置左侧幕帘动画
+                $(".rightcurtain").animate({width:'51%'},2000);  //设置右侧幕帘动画
+                curtainopen = false;
+            }
+            $("#button1").click(function(){
+                $(".leftcurtain").stop("true","true");
+                $(".rightcurtain").stop("true","true");
+            });
+        });
+    });
+    </script>
+</body>
+</html>

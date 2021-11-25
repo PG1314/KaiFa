@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淡入，淡出</title>
+    <script src="../../JS/jquery-3.6.0.js" type="text/JavaScript"></script>
+    <style>
+        #menu{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <p>方法：
+        fadeIn(speed.[callback])    //通过增大不透明度实现匹配元素淡入的效果    $("img").fadeln(300);   //淡入效果
+        fadeOut(speed.[callback])   //通过减少不同明度实现匹配元素淡出效果      $("img").fadeOut(300);  //淡出效果
+        fadeTo(speed.opacity,[callback])    //将匹配元素的不同明度以渐进的方式调整到指定参数    $("img").fadeTo(300,0.15)   //在0.3秒将图片调整到15%不透明
+        
+
+    </p>
+    <div id="box">
+        <img src="../../../JavaScript/img/女孩.png" alt="无"  style="width: 50px;height: 50px;float: left;">
+        <div id="menu">
+            <ul><button>html</button> </ul>
+            <ul><button>CSS</button> </ul>
+            <ul><button>javascript</button></ul>
+            <ul><button>jQuery</button></ul>
+        </div>
+    </div>
+    <script type="text/javascript">    //淡入、淡出效果
+    $(document).ready(function(){
+        $("#box").hover(function(){
+            $("#menu").fadeIn(1000);
+        },function(){
+            $("#menu").fadeOut(1000);
+        })
+    });
+    </script>
+</body>
+</html>

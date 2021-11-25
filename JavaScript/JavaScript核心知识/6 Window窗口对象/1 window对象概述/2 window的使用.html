@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window的使用</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+    //  语法  window.属性名                 window. 方法名(参数列表)
+    //  语法  parent.属性名                 parent. 方法名(参数列表)
+    //  语法  window.prompt(str1,str2)      提示对话框
+    var bool = window.confirm("是否关闭对话框")
+    if(bool == true){
+        window.close();     //关闭窗口
+    }
+    function b(){       //提示对话框
+        var b = document.getElementsByName("text1");
+        b.value = window.prompt(b.value,"前端") 
+    }
+    </script>
+    <input type="text"  name="text1" value="输入信息"><br><br> <!-- //placeholder="请在此输入信息" -->
+    <input type="button" name="button" value="显示对话框" onclick="b()"></input>
+    
+</body>
+</html>

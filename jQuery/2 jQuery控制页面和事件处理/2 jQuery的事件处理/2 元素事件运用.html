@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件应用</title>
+    <script src="../../JS/jquery-3.6.0.js"></script>
+</head>
+<body>
+<p>
+<h3>为元素绑定事件</h3>
+语法：  bind(type,[data],fn)        $("input:button").bind("click",function(){alert("弹出窗口")});
+<h3>移除绑定</h3>
+语法：  unbind([type],[data])       $("input:button").unbind("click");
+<h3>搬到一次性事件处理</h3>
+语法：  one(type,[data],fn)         $("div").one("click",function(){alert($(this).text())});
+<h3>模拟用户操作</h3>
+triggerHandler()    trigger()   不同点：han()不会导致浏览器同名默认被执行
+<h3>模拟悬停事件</h3>
+语法：  hover(over,out)             over:指定鼠标移动到匹配元素上触发函数   out：指定鼠标移出匹配元素上触发函数
+</p>
+<script type="text/javascript"> //模仿悬停事件
+$().ready(function(){
+    $("#img1").hover(function(){
+        $(this).attr("border",3);
+    },function(){
+        $(this).attr("border",0);
+    });
+
+
+});
+
+
+</script>
+<img src="../../../JavaScript/img/男孩.png" alt="wu" id="img1" style="width:100px;height: 100px;">
+<input type="button" id="button" name="button" value="提交">
+<script type="text/javascript"> //模拟用户操作
+$().ready(function(){
+    $("input:button").bind("click",function(event,ab,add){
+        alert(ab+add);
+    }).triggerHandler("click",["你好世界","你的名字"]);
+});
+</script>
+</body>
+</html>

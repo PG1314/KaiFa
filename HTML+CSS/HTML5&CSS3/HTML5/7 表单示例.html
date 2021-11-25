@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form示例</title>
+</head>
+<body>
+    <form id="testform" action="s1.jsp">
+        姓名：<input type="text" name="xingming"/><br/>
+        <input type="submit" value="POST方式提交" formmethod="post" formtarget="_black">
+        <input type="submit" value="get方式提交" formmethod="get" formtarget="_self">
+    </form>
+    <textarea form="testform" name="" id="textare" cols="30" rows="10"></textarea><br>
+    <form id="testform2" action="s2.jsp">
+        文件：<input type="file" name="file">
+        <input type="submit" value="上传" formaction="s3.jsp" formenctype="multipart/form-data" formtarget="parent">
+        <input type="submit" value="提交" formtarget="top">
+    </form>
+    <!-- formetarget的各属性使用 -->
+</body>
+</html>

@@ -1,0 +1,46 @@
+<h2>选择器的选择</h2>
+css选择器分五类：
+1.简单选择器    （根据名称、id、类来选取元素）
+2.组合选择器    （根据它们之间的特定关系来选取元素）
+3.伪类选择器    （根据特定状态选择元素）
+4.伪元素选择器  （选取元素的一部分并设置其样式）
+5.属性选择器    （根据属性或属性值来选择元素）
+元素选择器  ID选择器  class选择器  兄弟选择器  组合选择器   子类选择器  后代选择器
+元素选择器  div{}
+ID选择器    #div{}
+class选择器 .div{}
+兄弟选择器  div+p{}
+组合选择器  div,p{}
+子类选择器  div>p{}
+后代选择器  div p{}
+
+<css3的调用>  
+行内  内联  外联
+行内  <div style="font-size:36px;">你的名字</div>
+内联  <style>div{width:32px;}<style>
+外联  <link rel="stylesheet" href="css3/div.css">
+
+层叠顺序(优先级)
+1.行内样式(在HTML元素中)
+2.外部和内部样式表(在head部分)
+3.浏览器默认样式
+<文本样式>
+字体  字形  大小  颜色  
+
+<css颜色>
+css颜色有5种定义
+1.RGB   如：color:Tomato    color:rgb(255,99,71)  
+2.HEX   如：#f63
+3.HSL   如：hsl(9,100%,64%)
+4.RGBA  如：rgba(255,99,71,0)
+5.HSLA  如：hsla(0,100%,50,0.5)
+
+<CSS背景属性>
+1. background-color 背景颜色
+2. background-image 背景图片
+3. background-repeat    背景重复
+4. background-attachment    背景附件
+5. background-position  背景位置
+<a hraf="../CSS/css背景.html"></a>
+
+<css边框>

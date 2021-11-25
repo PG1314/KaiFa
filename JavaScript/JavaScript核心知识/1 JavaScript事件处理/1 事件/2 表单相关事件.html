@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单事件</title>
+    <style>
+        table {
+            height: 160px;
+            width: 300px;
+            border: 0;
+            background-color: aqua;
+        }
+        td {
+            text-align: right;
+        }
+        .tb2 {
+            width: 100px;
+            ;
+            text-align: left;
+        }
+        #tj {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <form  name="form1" onsubmit="cz">
+        <tr>
+            <td width="80">用户名：</td>
+            <td class="tb2"><input type="text" onFocus="jj()"></td> <!--   //onFocus 页面聚焦时触发事件 -->
+        </tr>
+        <tr>
+            <td>密码：</td>
+            <td class="tb2"><input type="text" onFocus="jj()" onblur="mm()"></td> <!--  页面失去焦点 -->
+        </tr>
+        <tr>
+            <td>真实姓名：</td>
+            <td class="tb2"><input type="text" onFocus="jj()"></td>
+        </tr>
+        <tr>
+            <td>性别：</td>
+            <td class="tb2"><input type="text" onFocus="jj()"></td>
+        </tr>
+        <tr>
+            <td>邮箱：</td>
+            <td class="tb2"><input type="text" onFocus="jj()"></td>
+        </tr>
+        <tr>
+            <td id="tj" colspan="2" ><input type="submit" value="提交" onclick="tj2()">&nbsp; <!-- colspan="2" 和并行 -->
+            <input type="reset" value="重置" onclick="cz()"></td>
+        </tr>
+        </form>
+    </table>
+    <script type="text/javascript">
+        function tj2() {
+            alert("提交成功");
+        }
+        function jj() {
+            var e = window.event;
+            var obj = e.srcElement;
+            obj.style.background = "#FF9966"
+        }
+        function mm() {
+            var e = window.event
+            var obj = e.srcElement;
+            obj.style.background = "#999999"
+        }
+        function cz(){
+            var a=true;
+            var e=window.event;
+            var obj=e.srcElement;
+            for(var n=1;n<3;n++){
+                if(obj.value==""){
+                    a=false;
+                    break;
+                }
+            }
+            if(!a){
+                alert("不能为空");
+            }
+            return a;
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>成绩查询</title>
+    <script type="text/javascript">
+        var pg={
+        name:'PG',
+        sex:'男',
+        shux:67,
+        yuw:65,
+        yiny:53,
+        wul:64,
+        huax:86,
+        avg:0
+    }
+    function cj(name,sex,shux,yuw,yiny,wul,huax){
+        this.avg=shux+yuw+yiny+wul+huax;
+        document.write("数学："+shux);
+        document.write("<br>语文："+yuw);
+        document.write("<br>英语："+yiny);
+        document.write("<br>物理："+wul);
+        document.write("<br>化学："+huax);
+        document.write("<br>================");
+        document.write("<br>姓名："+name+"&nbsp&nbsp性别："+sex);
+        document.write("<br>总分："+this.avg);
+    }
+
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+    var cj1 = new cj(pg.name,pg.sex,pg.shux,pg.yuw,pg.yiny,pg.wul,pg.huax);
+    </script>
+
+</body>
+</html>

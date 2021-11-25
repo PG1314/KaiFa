@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移动</title>
+</head>
+<body>
+    <script type="text/javascript">
+    var x=0,y=0;
+    function dw1(){
+        x=window.event.x;
+        y=window.event.y;
+        document.getElementById("dw").innerHTML="鼠标在页面的当前位置x:"+x+"y:"+y;
+    }
+    document.onmousemove=dw1;   //鼠标移动时调用函数
+    </script>   
+    <span id="dw"></span>
+</body>
+</html>

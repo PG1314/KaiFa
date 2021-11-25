@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的使用</title>
+    <script type="text/javascript">
+    function one(){
+        document.write("how are you");
+        return('无');
+    }
+    function two(){
+        document.write("你好世界");
+        return(2);
+    }
+       
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+    one();
+    document.write("<br>"+one());
+
+    // 定义匿名函数 
+    var suan = function scr(name,age){
+        alert("\n我的名字是："+name+"\n年龄是："+age);
+    }
+    document.write(suan("墨非凡",18));
+
+    // 定义构造函数
+    var suan1 = new Function ("name1","agem1","alert('\n我的名字是：'+name+'\n年龄是：'+age);");
+    document.write(suan1("青青",18));
+    </script>
+
+    <!-- 可在事件响应中调用函数 -->
+    <form action="" method="POST" name="or">
+        <input type="button" value="提交" onclick=one()>
+    </form>
+    <a href="javascript:two()">超链接</a>
+
+    
+
+</body>
+</html>

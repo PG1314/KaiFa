@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo14</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        .red{color:red;}
+        .green{color:green;}
+        .background{background-color:aqua};
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    
+</body>
+<script>
+    const app=Vue.createApp({
+        data(){
+            return{
+                classString:'red',      //普通字符串进行绑定
+                classObject:{red:true,background:true}, //对象的方式进行绑定
+                classArray:['green','background',{red:true}],    //数组的方式进行绑定
+                styleString:'color:orange',
+                styleObject:{
+                        color:'red',
+                        background:"yelow"
+                },
+            }
+        },
+        template:`
+            <sonCom class="green" />
+            <h2 :class="styleObject">JavaScript</h2>
+            <h2 style="color:orange;">javascript1</h2>
+            <h2 :class="classString">javascript2</h2>
+        
+        `
+    })
+    app.component('sonCom',{
+        template:`
+        <div>
+            <div>SonCom</div>
+            <div :class="$.attrs.class">程序员</div>
+        </div>
+        `
+    })
+    const vm=app.mount("#app")
+
+</script>
+
+</html>

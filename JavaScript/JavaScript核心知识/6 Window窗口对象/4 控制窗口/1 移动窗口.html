@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动窗口</title>
+</head>
+<body>
+    <p>
+        语法：  moveTo() 方法    window.moveTo(x,y); //  移动到指定坐标<br>
+        语法：  resizeTo() 方法   window.resizeTO(x,y);   //设置窗口高，宽<br>
+        语法：  screen    对象    <br>
+        属性：  width 设置屏幕水平宽度<br>
+                height  设置屏幕垂直高度<br>
+                pixelDepth  显示器的每个像素位数
+                colorDepth  返回当前颜色所用的位数，1黑色，8表示256色，16表示增强色，24、32表示真彩色
+                avaiWidth   返回窗口内容域的水平尺寸，像素为单位
+                avaiHeight  返回窗口内容域的垂直尺寸，像素为单位     
+    </p>
+    <script type="text/javascript">
+    document.write("屏幕宽度",window.screen.width,"<br>屏幕高度",window.screen.height,"<br>显示器像素",window.screen.pixelDepth,"<br>显示器位数",window.screen.colorDepth,"<br>窗口水平尺寸",window.screen.availHeight);
+    </script>
+    
+</body>
+</html>

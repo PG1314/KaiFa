@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>局部组件</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>  <!-- 调用局部vue数据文件  -->
+</head>
+<body>
+    <div id="app"></div>
+</body>
+    <script>
+        const Counter = {
+            data(){
+                return{
+                    count:0
+                }
+            },
+            template:`
+                <h2>baidu.com</h2>
+                <div>{{count}}<button @click="count++">增加1</button></div>
+            `
+        }
+        const XieDaJiao = {     //局部组件    
+            template:`
+            <h2>JSPang.com</h2>
+            `
+        }
+        const app = Vue.createApp({ //局部组件  
+            components: {         //调用组件
+                jspang: Counter, 
+                'xie-da-jiao': XieDaJiao ,
+            },
+            template:`
+            <h2>局部模块{{count}}</h2>
+            <xie-da-jiao />
+            <jspang />
+            <quanju />
+
+            `
+        })
+        app.component('quanju',{    //全局组件
+            template:`
+            <div><p>全局组件</p></div>
+            `
+        })
+        const vm =app.mount("#app");
+
+    </script>
+</html>

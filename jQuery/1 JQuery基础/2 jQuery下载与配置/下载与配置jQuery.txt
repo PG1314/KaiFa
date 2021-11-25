@@ -1,0 +1,3 @@
+1.jQuery是开源的脚本库，官网下载地址：http://jquery.com
+1.配置jQuery
+<script type="text/javascript" src="JS/jquery-3.2.1.min.js"></script>

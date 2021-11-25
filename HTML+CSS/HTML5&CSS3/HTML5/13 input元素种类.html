@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input种类</title>
+</head>
+<body>
+    <section>
+        <div>
+            搜索：<input type="search"><br>
+            电话：<input type="tel"><br>
+            URL：<input name="urll" type="url" value="http://www.microsoft.com"><br><!-- 不是URL格式无法提交 -->
+            email：<input  type="email" ><br>
+            日期：<input type="date" step="7"><br>
+            月份：<input type="month" value="2021-10"><br>
+            星期：<input type="week" value="2021-W40"><br>
+            时间：<input type="time" value="10:00"><br>
+            日期&时间：<input type="datetime-local"><br>
+            数值文本框：<input name="numberl" type="number" value="10" min="8" max="12" step="0.5"><br>
+            滑条：<input type="range"><br>
+            颜色：<input type="color"><br>
+        </div>
+        <div>
+            <form action="" method="post">
+                <input type="submit" value="提交">
+            </form>
+        </div>
+    </section>
+    <section>
+        <div><input id="date1" type="date"> </div>
+        <div><input type="button" value="点击我" onclick="alert(document.getElementById('date1')).valueAsNumber"> </div>
+        <script>
+            //将datetime元素的valueAsDate属性设定为当前日期与时间
+            document.getElementById('date1').valueAsDate=new Date();
+        </script>
+    </section>
+</body>
+</html>

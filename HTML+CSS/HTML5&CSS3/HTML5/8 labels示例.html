@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>labels熟悉的使用</title>
+</head>
+<script type="text/javascript">
+    function Validate(){
+        var txtName=document.getElementById("txt_name");
+        var button=document.getElementById("btnValidate");
+        var form=document.getElementById("testform");
+        if(txtName.value.trim()==""){
+            if(txtName.labels.length==1)
+            {
+                var label=document.createElement("label");
+                label.setAttribute("for","txt_name");
+                form.insertBefore(label,button);
+                txtName.labels[1].innerHTML="请输入姓名";
+                txtName.labels[1].setAttribute(
+                    "style","font-size:9px;color:red");
+            }
+        }
+        else if(txtName.labels.length>1)
+            form.removeChild(txtName.label[1]);
+    }
+</script>
+<body>
+    <form action="" id="testform">
+        <label id="label" for="txt_name">姓名</label>
+        <input id="txt_name">
+        <input type="button" id="btnValidate" value="验证" onclick="Validate()" />
+    </form>
+    
+</body>
+</html>

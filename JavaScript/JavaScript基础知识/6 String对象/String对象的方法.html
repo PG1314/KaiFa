@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>string方法</title>
+</head>
+
+<body>
+    <script type="text/javascript">     //输出字符串中的位置
+        var str = "你好，我是零零发"
+       // document.write("str(4)输出第4+1个字符串:" + str.charAt(4)); //输出第几个字符串
+       // document.write("<br>str.indexOf('零')输出字符串元素的首个出现的字符串位置:" + str.indexOf("零"));   //输出字符串元素的首个出现的字符串位置
+      //  document.write("<br>str.indexOf('零八')输出字符串元素的首个出现的字符串位置:" + str.indexOf("零八")); //字符串中没有者未-1（假）
+     //   document.write("<br>sstr.lastIndexOf('零')出字符串元素的最后出现的字符串位置:" + str.lastIndexOf("零"));
+    </script>
+    <script type="text/javascript">     //换提取字符串中字符串
+        document.write("<br>截取字符串中的位置:" + str.slice(3, 6));        //截取字符串中的位置   //用法与substr()一致
+        document.write("<br>从字符串中第几个开始截取:" + str.substr(3));     //从字符串中第几个开始截取 //用法与slice()一致
+        document.write("<br>提取字符串中的第几个数：" + str.substring(1, 4));      //提取字符串中的第几个数
+    </script>
+    <script type="text/javascript">     //大小写转换
+        var dx = "PG make np";
+        document.write("<br>小写转换：" + dx.toLowerCase());    //小写转换
+        document.write("<br>大写转换：" + dx.toUpperCase());    //大写转换
+    </script>
+    <script type="text/javascript">     //连接拆分  重点
+        document.write("<br>字符串连接"+str.concat(dx)+"<br>");        //字符串连接
+        var arr=new Array("你","名");
+        var ar=new Array("的","字");
+        for(n in ar){           
+            document.write(arr[n].concat(ar[n]));       //数组连接
+        }
+        document.write("<br>以空格分隔元素："+dx.split(" "));   //以空格分隔元素
+        document.write("<br>以空字符分隔元素："+dx.split(""));    //以空字符分隔元素
+        document.write("<br>以空字符分隔并返回3个元素："+dx.split("",4));      //以空字符分隔并返回3个元素
+        //格式化字符串 单词加() 请百度
+    </script>
+</body>
+
+</html>

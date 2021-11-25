@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>control示例</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function setValue(){
+            var label=document.getElementById("label");
+            var textbox=label.control;
+            textbox.value="213001";
+        }
+    </script>
+    <form >
+        <label  id="label" >
+            邮编：<input id="txt_zip"maxlength="6">
+            <smail>请输入六位数字</smail>
+        </label>
+        <input type="button" value="设置默认值" onclick="setValue()"/>
+    </form>
+</body>
+</html>

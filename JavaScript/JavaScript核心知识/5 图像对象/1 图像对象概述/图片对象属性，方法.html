@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><h2>图像对象属性</h2>
+        border  返回或设置图片的边框宽度，以像素为单位<br>
+        height  返回或设置图片的高度，以像素为单位<br>
+        hspace  返回或设置图片左边和右边的文字与图片之间的间距，以像素为单位<br>
+        lowsrc  返回或设置代替图片的低分辨率图片的URL<br>
+        name    返回或设置图片名称<br>
+        src     返回或设置图片的URL<br>
+        vspace  返回或设置图片上下面的文字与图片的间距，以像素为单位<br>
+        width   返回或设置图片的边框宽度，以像素为单位<br>
+        alt     返回或设置鼠标经过图片时显示文字<br>
+        complete 判断图像是否完全被加载，如果被完全加载，属性返回true值<br>
+        <h2>图像对象的事件</h2>
+        abort   当用户放弃加载图片时触发该事件<br>
+        load    成功加载图片时触发事件<br>
+        crror   在加载图片过程中产生错误时触发该事件<br>
+        click   图片上点击时触发事件<br>
+        dblclick    图片上双击鼠标触发事件<br>
+        mouseover   鼠标移动到图片时触发事件<br>
+        mouseout    鼠标从图片移开时触发事件<br>
+        mousedown   图片上按下鼠标时触发事件<br>
+        mouseup     图片上释放鼠标时触发事件<br>
+        mousemove   图片上鼠标移动时触发事件<br>
+        <h2></h2>
+    </p>
+    <div><img src="../../../img/男孩.png" alt="无" id="im" onmouseover="nv()" onmouseout="na(im)"></div>
+    <script type="text/javascript">
+
+        function nv(){
+            imgs = document.images[0];   //doucment.images["男孩.png"] //doucment.getElementById("id");
+            imgs.src="../../../img/女孩.png";
+        }
+        function na(im){
+            ad = document.images[0];
+            ad.src="../../../img/男孩.png";
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动窗口</title>
+</head>
+<body >
+    <input type="submit" value="自动的窗口" onclick="ck()">
+    <!-- <script type="text/javascript">
+    function ck(){
+        wid = window.open('new9.html','9','name=new9');
+        wid.moveTo(50,100);
+        wid.resizeTo(400,100);
+        add();
+    }
+    function add(){
+        for(n=1;n<40;n+=1)
+        wid.resizeBy(2,n);
+    }
+    setTimeout('add()',100);
+    </script> -->
+    <script>
+        var w,x=5;
+        function openwindow()
+        {
+        w=window.open('','', 'width=100,height=100');
+        w.focus();
+        }
+        function myFunction()
+        {
+        w.resizeTo(500,x+=50);
+        w.focus();
+        settimeout("myFunction()",3000);
+        }
+        ;
+        </script>
+        <button onclick="openwindow()">Create window</button>
+        <button onclick="myFunction()">Resize window</button>
+</body>
+</html>

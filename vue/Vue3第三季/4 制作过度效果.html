@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过度效果</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+    <style>
+        .v-enter-from , .v-leave-active{
+            opacity:0;
+        }
+        .v-leave-active , .v-enter-from{
+            opacity:1;
+        }
+        .v-enter-active , .v-leave-active{
+            transition:opacity 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{
+                    isShow:true
+                }
+            },
+            methods:{
+                hanldClick(){
+                    this.isShow = !this.isShow
+                }
+            },
+            template:`
+            <transition>
+                <div v-if="isShow">技术讲程序</div>
+            </transition>
+            <div><button @click="hanldClick">切换动画</button></div>
+            `
+        })
+        const vm=app.mount("#app")
+    </script>
+</html>

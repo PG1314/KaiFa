@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重要方法</title>
+</head>
+<body>
+    <p>createApp()和mount()方法讲解
+
+        现在你先看下面两句JavaScript代码,代码中有两个重要的方法createApp()和mount()。
+        
+        const app = Vue.createApp({})
+        app.mount("#app")
+        
+            createApp()方法：
+        
+        在第一篇文章编写HelloWorld的时候，就写过这句话Vue.createApp()从英文单词上理解，这个就是创建一个应用create-创建，App-Application-应用，前面的Vue就是Vue这个框架，所以Vue.createApp()的意思就是创建一个Vue的应用。
+        
+            mount()方法
+        
+        mount()方法就是挂载到某个Html的DOM节点上，它接受一个字符串型参数,参数可以使用CSS选择器，一般都是ID选择器的形式，指定挂载的DOM元素。
+        createApp()方法的基本参数讲解
+        
+        当你明白了createApp()方法的作用，接下来可以更深层次的去了解它的参数。首先它接受一个对象形式的参数{}。这个对象就是告诉Vue应该如何展现我们最外层的组件。 根据我们在初始章节学习的内容，我们很容易写出下面的内容。
+        
+        <script>
+            const app = Vue.createApp({
+                data() {
+                    return {
+                        message: 'jspang.com'
+                    }
+                },
+                template: "<h2>{{message}}</h2>"
+            })
+            app.mount("#app")
+        </script>
+        
+        写完后，可以到浏览器中预览一下结果。
+        如何获取Vue的根组件vm
+        
+        当你使用creatApp()方法创建了一个Vue应用时，如何能获取根组件那?其实你使用mount()方法时，就会返回根组件。下面的代码，声明一个变量来获取根组件，并打印出来。通过打印你可以看出根组件是一个Proxy形式的对象。
+        
+        const vm = app.mount("#app")
+        console.log(vm)
+        
+        这里为什么我把根组件起名为vm那？我先按下不表，我们先来了解一下Vue的设计模式。
+        mvvm设计模式讲解
+        
+        Vue的编程设计模式应该叫做mvvm的设计模式。什么叫做mvvm哪？它首先是面向数据的编程，程序中定义了数据，然后定义了模板，Vue就可以把数据和模板自动进行关联。最后挂载到真实的DOM上，展示给用户。
+        
+            mvvm解释: 第一个m代表model数据，第一个v代表view视图，最后两个字幕vm代表viewModel视图数据连接层。
+        
+        如果你看完这个解释还不太明白，我们可以看一下Demo6.html进行理解。
+        
+        <script>
+            const app = Vue.createApp({
+                data() {
+                    return {
+                        message: 'jspang.com'   //1.在这里定义了数据，也就是`model`数据
+                    }
+                },
+                template: "<h2>{{message}}</h2>" //2.在这里定义了模板，也就是`view`，
+                //定义后的自动关联，就叫做`vm`，viewModel数据视图连接层。
+            })
+            app.mount("#app")
+        </script>
+        
+        model数据，是我们自己定义的，view模板也是我们自己定义的，但是vm是Vue自动给我们关联的。
+        
+        当我们明白了什么是mvvm后，你就知道为什么我们给根组件起名vm了。
+        
+        当我们获取了vm根节点后，其实就可以操作里边的数据了。比如在控制台中输入下面的代码：
+        
+        vm.$data.message ='技术胖'
+        
+        这个时候你会发现网页界面也跟着发生了变化，变成了技术胖.
+        
+        好了，我们总结一下这篇文章我们都学到了什么，首先我们学习了Vue中的两个最基本方法createApp()和mount(),然后学习了如何获取和使用根组件，在学习根组件的时候又讲解了Vue框架的基本模式是mvvm，并对mvvm模式进行了具体讲解。</p>
+</body>
+</html>

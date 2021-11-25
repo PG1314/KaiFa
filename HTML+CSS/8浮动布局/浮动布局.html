@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动布局</title>
+    <!-- 正常文档流 排布按照标签特性进行排布 <div class="one">1000</div> <div class="two">2000</div>
+         脱离文档流 标签顺序明显不一致，需用浮动 
+         语法：float(浮动)：(left左边，right右边)-->
+    <style>
+        div{
+            height: 150px;
+            width:250px;
+            border-style:solid;
+            border-color:rgb(255, 255, 255);
+            /* vertical-align: bottom;
+            align-items: baseline; */
+        }
+        img{
+            height:auto;
+            width:150px;
+            float:left;
+
+        }
+        #name{
+            float:left;
+            margin-top:35px;
+            border:1px;
+            padding-right:16px;
+            width:60px;
+            height:20px;
+            font-family:正楷;   
+        }
+        #rs{
+            float:left; 
+            font-size:12px;
+            margin-top:20px;
+            border:0px;
+            padding:0px;
+            width:30px;
+            height: 30px ;
+            align-items: center;
+        }
+        #sl{
+            float:left;
+            color:coral;
+            font-size: 12px;
+            margin-top:20px;
+            border:0px;
+            padding:0px;
+            width:50px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <img src="黄鸭.gif" alt="">
+        <p id="name">小黄鸭</p>
+        <p id="rs">查看</p>
+        <p id="sl">2312</p>
+    </div>
+    
+</body>
+</html>

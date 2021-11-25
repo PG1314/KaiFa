@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动或与钩子函数</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+    <style>
+        @keyframes comein{
+            0%{
+                transform:translateX(-120)
+            }
+            100%{
+                transform:translateX(0px)
+            }
+        }
+        @keyframes comeout{
+            0%{
+                transform:translateX(0px)
+            }
+            100%{
+                transform:translateX(-120px)
+            }
+        }
+        .v-enter-active{
+            animation:comein 1s;
+        }
+        .v-leave-active{
+            animation:comeout 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <div> before-leave :离场动画执行之前<br>
+    leave：开始执行离场动画<br>
+    leave-after: 离场动画执行结束<br></div>
+</body>
+    <script>
+  const app = Vue.createApp({
+        data(){
+            return {
+                isShow:true
+            }
+        },
+        methods:{
+            hanldClick(){
+                this.isShow = ! this.isShow
+            },
+            handleBeforeEnter(element){
+                element.style.color="red"
+            },
+            handleEnterActive(element,done){
+                const animation=setInterval(()=>{
+                    const color=element.style.color;
+                    if(color=="red"){
+                        element.style.color="green"
+                    }else{
+                        element.style.color="red"
+                    }
+                },1000)
+                setTimeout(()=>{
+                    clearInterval(animation)
+                },5000)
+                setTimeout(()=>{
+                clearInterval(animation)
+                     done()
+                 },5000)
+            },
+            handleEnterEnd(){
+                alert('JSPang.com')
+            }
+        },
+        template: `  
+        <transition 
+            :css="false"
+            @before-enter="handleBeforeEnter"
+            @enter="handleEnterActive"
+            @after-enter="handleEnterEnd"
+        >
+            <div v-if="isShow">技术胖讲程序</div>
+        </transition>
+        <button @click="hanldClick">切换动画</button>
+
+        `
+        //<transition :css="false"> //如果不使用css动画，可加上 :css="false"
+    })
+    const vm = app.mount("#app")
+
+    </script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo20</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="add"></div>
+    
+</body>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return{
+
+                }
+            },
+            methods:{
+                handleKeyDown(){
+                    console.log('keydow....')
+                },
+                handleClick(){
+                    alert('clck')
+                },
+            },//单个按键修饰符  enter、tab、delete、esc、up、down、left、right、keydown//事件次数检查
+            template:`
+                <div>
+                    <input @keydown="handleKeyDown"/>
+                    <div @click.right='handleClick'>Vue</div>
+                </div>
+            `//鼠标修饰符   left、right //右键、middle、
+        })
+        const vm=app.mount("#add")
+    </script>
+</html>
