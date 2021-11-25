@@ -29,7 +29,7 @@ class选择器 .div{}
 
 <css颜色>
 css颜色有5种定义
-1.RGB   如：color:Tomato    color:rgb(255,99,71)  
+1.RGB   如：color:Tomato    color:rgb(255,99,71)   
 2.HEX   如：#f63
 3.HSL   如：hsl(9,100%,64%)
 4.RGBA  如：rgba(255,99,71,0)
